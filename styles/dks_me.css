@@ -121,7 +121,7 @@ a:hover, a:link, a:visited, a:active {
     }
 
     .cardBG {
-        max-width: 30em;
+        max-width: 25em;
         padding: 2em;
         border-radius: var(--radius-m);
         margin: auto;
@@ -129,20 +129,21 @@ a:hover, a:link, a:visited, a:active {
     }
 
     
-.bioPic {
-    border-radius: 50%;
-    height: 8rem;
-    width: 8rem;
-    box-shadow: rgba(0, 0, 0, .2) 5px 5px 5px;
-    margin-bottom: -2em;
-}
+    .bioPic {
+        border-radius: 50%;
+        height: 8rem;
+        width: 8rem;
+        box-shadow: rgba(0, 0, 0, .2) 5px 5px 5px;
+        margin-bottom: -2em;
+    }
 
-.bioTitle {
-    flex-direction: column;
-    align-content: center;
-    justify-content: center;
-    align-items: center;
-    margin: auto;
-    z-index: 10;
-}
+    .bioTitle {
+        width: 15em;
+        flex-direction: column;
+        align-content: center;
+        justify-content: center;
+        align-items: center;
+        margin: auto;
+        z-index: 10;
+    }
 }
