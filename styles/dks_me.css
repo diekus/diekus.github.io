@@ -113,3 +113,18 @@ a:hover, a:link, a:visited, a:active {
     text-align: right;
     z-index: 100;
 }
+
+@media (max-width: 600px ) {
+    .social-icon {
+        width: 1em;
+        height: 1em;
+    }
+
+    .cardBG {
+        max-width: 30em;
+        padding: 2em;
+        border-radius: var(--radius-m);
+        margin: auto;
+        margin-top: -2.5em;
+    }
+}
