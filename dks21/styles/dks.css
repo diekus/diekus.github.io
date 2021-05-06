@@ -43,7 +43,7 @@ a:hover, a:link, a:visited, a:active {
 
 #sec-hero {
     grid-column: 2/3;
-    background: no-repeat url('/images/pwang.svg'), var(--bg-gradient);
+    background: no-repeat url('../images/pwang.svg'), var(--bg-gradient);
     background-size: 90vh;
     background-position: left 30% bottom -30%;
     display: flex;
@@ -59,7 +59,7 @@ a:hover, a:link, a:visited, a:active {
 
 #sec-main {
     grid-column: 1/2;
-    background: center no-repeat url('/images/mainbg.jpg') ;
+    background: center no-repeat url('../images/mainbg.jpg') ;
     text-align: right;
     display: flex;
     flex-direction: column;
