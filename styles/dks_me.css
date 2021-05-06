@@ -1,0 +1,115 @@
+:root {
+    color: var(--foreground);
+
+    --radius-m: 7px;
+    --radius-xxl : 100px;
+
+    --hero-top-margin: 15em;
+}
+
+html {
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.8em;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    padding: 1.5em;
+}
+
+a:hover, a:link, a:visited, a:active {
+    color: var(--accent);
+}
+
+.card {
+    border-radius: var(--radius-m);
+    background: var(--content-surface);
+    color: var(--foreground);
+    margin: 1.5rem 0rem;
+    padding: 2rem;
+    z-index: 20;
+}
+
+.cardBG {
+    background-image: url('../images/mainbg.jpg');
+    background-size: cover;
+    background-position: center center;
+    max-width: 40em;
+    padding: 3em;
+    border-radius: var(--radius-m);
+    margin: auto;
+    margin-top: -3.5em;
+}
+
+.bioPic {
+    border-radius: 50%;
+    height: 10rem;
+    box-shadow: rgba(0, 0, 0, .2) 5px 5px 5px;
+}
+
+.bioTitle {
+    display: flex;
+    flex-direction: row;
+    width: 25em;
+    margin: auto;
+    z-index: 10;
+}
+
+.center {
+    margin: auto;
+}
+
+.bio {
+}
+
+.social-links {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 2em
+}
+
+.social-icon {
+    width: 2em;
+    height: 2em;
+}
+
+/*Titles*/
+
+.title {
+    text-transform: uppercase;
+    position: sticky;
+    margin-bottom: 3.5em;
+    z-index: 1000;
+}
+
+.titleP1 {
+    position: sticky;
+    width: max-content;
+    color: #025A9A;
+    background-color: #FFF;
+    border: #FFF solid 5px;
+    border-radius: var(--radius-m);
+    box-shadow: rgba(0, 0, 0, .2) 5px 5px 5px;
+    font-weight: bolder;
+    padding: .3em;
+    flex-direction: column;
+    z-index: 10;
+}
+
+.titleP2 {
+    position: absolute;
+    top: 1.2em;
+    left: 40px;
+    width: max-content;
+    color: #FFF;
+    background: #36AAFF;
+    border: #FFF solid 10px;
+    border-radius: var(--radius-m);
+    box-shadow: rgba(0, 0, 0, .2) 5px 5px 5px;
+    font-weight: bold;
+    padding: .4em;
+    text-align: right;
+    z-index: 100;
+}
