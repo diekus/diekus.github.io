@@ -1,0 +1,19 @@
+:root {
+
+    /*paleta*/
+
+    /*estructura*/
+    --background: #f4f4f4;
+    --foreground: #3d3d3d;
+    --bgaccent: #fff;
+    --accent: #025A9A;
+
+    --page-bg: url(/images/bgl.png);
+    --bg-gradient: radial-gradient(#FE4819, #FF524D);
+    --content-surface: rgba(255, 255, 255, 0.95);
+
+}
+
+html {
+    background: url(/images/bgl.png);
+}

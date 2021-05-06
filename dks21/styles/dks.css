@@ -1,0 +1,254 @@
+:root {
+    color: var(--foreground);
+
+    --radius-m: 7px;
+    --radius-xxl : 100px;
+
+    --hero-top-margin: 15em;
+}
+
+html {
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.8em;
+}
+
+.main-logo {
+    max-width: 10rem;
+}
+
+body {
+    margin:0px;
+    padding: 0px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    height: 100vh;
+}
+
+section {
+    display: flex;
+    flex-direction: column;
+    padding: 2rem;
+    border: 0 solid var(--bgaccent);
+    transition: border .5s;
+    overflow: hidden;
+}
+
+section:hover {
+    border: .5rem solid var(--bgaccent);
+}
+
+a:hover, a:link, a:visited, a:active {
+    color: var(--accent);
+}
+
+#sec-hero {
+    grid-column: 2/3;
+    background: no-repeat url('/images/pwang.svg'), var(--bg-gradient);
+    background-size: 90vh;
+    background-position: left 30% bottom -30%;
+    display: flex;
+    overflow-y: auto;
+    
+}
+
+#sec-featured {
+    grid-column: 3/4;
+    background: var(--page-bg);
+    overflow-y: auto;
+}
+
+#sec-main {
+    grid-column: 1/2;
+    background: center no-repeat url('/images/mainbg.jpg') ;
+    text-align: right;
+    display: flex;
+    flex-direction: column;
+}
+
+.cards {
+    margin-top: 10rem;
+}
+
+.card {
+    border-radius: var(--radius-m);
+    background: var(--content-surface);
+    color: var(--foreground);
+    margin: 1.5rem 0rem;
+    padding: 1rem;
+    z-index: 20;
+}
+
+.card-corner {
+    border-radius: var(--radius-m) var(--radius-xxl) var(--radius-m) var(--radius-m);
+}
+
+.card-title {
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    line-height: 1.7em;
+}
+
+.video-card {
+    min-height: 25%;
+    border-radius: var(--radius-xxl) var(--radius-m);
+    overflow: hidden;
+    z-index: 20;
+}
+
+.rounded-corners {
+    border-radius: var(--radius-m);
+}
+
+.icon-card-l {
+    height: 5rem;
+    position: relative;
+    top: -1rem;
+    margin: 0rem 1rem;
+    border-radius: 3px;
+}
+
+.pwa-title {
+    grid-column: 1 /-1;
+    grid-row: 2/3;
+}
+
+.hero-top-margin {
+    margin-top: var(--hero-top-margin);
+}
+
+.main-nav {
+    width: max-content;
+    margin: 0px;
+}
+
+/*Titles*/
+
+.title {
+    text-transform: uppercase;
+    position: sticky;
+    margin-bottom: 3.5em;
+    z-index: 1000;
+}
+
+.titleP1 {
+    position: sticky;
+    width: max-content;
+    color: #025A9A;
+    background-color: #FFF;
+    border: #FFF solid 5px;
+    border-radius: var(--radius-m);
+    box-shadow: rgba(0, 0, 0, .2) 5px 5px 5px;
+    font-weight: bolder;
+    padding: .3em;
+    flex-direction: column;
+    z-index: 10;
+}
+
+.titleP2 {
+    position: absolute;
+    top: 1.2em;
+    left: 40px;
+    width: min-content;
+    color: #FFF;
+    background: #36AAFF;
+    border: #FFF solid 10px;
+    border-radius: var(--radius-m);
+    box-shadow: rgba(0, 0, 0, .2) 5px 5px 5px;
+    font-weight: bold;
+    padding: .4em;
+    text-align: right;
+    z-index: 100;
+}
+
+@media (max-width: 1200px) {
+    body {
+        grid-template: 180px auto / 1fr 1fr;
+    }
+
+    #sec-hero {
+        grid-column: 1/2;
+    }
+    
+    #sec-featured {
+        grid-column: 2/3;
+        background: var(--page-bg);
+    }
+    
+    #sec-main {
+        grid-column: 1/-1;
+        text-align: right;
+        display: grid;
+        grid-template: 1fr / auto auto auto;
+    }
+
+    .main-nav {
+        grid-column: 1 / 2;
+        grid-row: 1/2;
+        line-height: 1em;
+        justify-self: center;
+        align-self: center;
+        padding-bottom: 5em;
+    }
+
+    .main-title {
+        grid-column: 3 / 4;
+        grid-row: 1/2;
+    }
+}
+
+@media (max-width: 700px ) {
+    body{
+        display: flex;
+        flex-direction: column;
+        height: max-content;
+    }
+
+    #sec-hero {
+        display: flex;
+        flex-direction: column;
+    }
+    
+    #sec-featured {
+        display: flex;
+        flex-direction: column;
+    }
+    
+    #sec-main {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .main-nav {
+        padding-bottom: 1rem;
+    }
+}
+
+@media (max-height: 500px) {
+    body{
+        display: flex;
+        flex-direction: column;
+        height: max-content;
+    }
+
+    #sec-hero {
+        display: flex;
+        flex-direction: column;
+    }
+    
+    #sec-featured {
+        display: flex;
+        flex-direction: column;
+    }
+    
+    #sec-main {
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+@media (prefers-reduced-motion) { 
+    section:hover {
+        
+    }
+}

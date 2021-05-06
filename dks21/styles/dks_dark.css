@@ -1,0 +1,30 @@
+:root {
+
+    /*paleta*/
+
+    /*estructura*/
+    --background: #3d3d3d;
+    --foreground: #f4f4f4;
+    --bgaccent: #000;
+    --accent: #86BEE7;
+
+    --page-bg: url(/images/bgd.png);
+    --bg-gradient: radial-gradient(#222222, #0c0c0c); 
+    --content-surface:rgba(61, 61, 61, 0.95);
+
+    /*efectos*/
+    filter:grayscale(60%);
+
+}
+
+html {
+    background: url(/images/bgd.png);
+}
+
+img {
+    filter: grayscale(20%) brightness(80%);
+}
+
+.video-card {
+    filter: grayscale(100%);
+}
