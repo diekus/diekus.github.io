@@ -8,7 +8,7 @@
     --bgaccent: #fff;
     --accent: #025A9A;
 
-    --page-bg: url(/images/bgl.png);
+    --page-bg: url(../images/bgl.png);
     --bg-gradient: radial-gradient(#FE4819, #FF524D);
     --content-surface: rgba(255, 255, 255, 0.95);
 
