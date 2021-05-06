@@ -127,4 +127,22 @@ a:hover, a:link, a:visited, a:active {
         margin: auto;
         margin-top: -2.5em;
     }
+
+    
+.bioPic {
+    border-radius: 50%;
+    height: 8rem;
+    width: 8rem;
+    box-shadow: rgba(0, 0, 0, .2) 5px 5px 5px;
+    margin-bottom: -2em;
+}
+
+.bioTitle {
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    z-index: 10;
+}
 }
