@@ -13,7 +13,7 @@
     --content-surface:rgba(61, 61, 61, 0.95);
 
     /*efectos*/
-    filter:grayscale(60%);
+    /* filter:grayscale(60%); */
 
 }
 
@@ -22,7 +22,12 @@ html {
 }
 
 img {
-    filter: grayscale(20%) brightness(80%);
+    filter: grayscale(50%) brightness(80%);
+}
+
+.social-icon {
+    filter: grayscale(0%) brightness(100%);
+}
 }
 
 .video-card {
