@@ -163,4 +163,12 @@ a:hover, a:link, a:visited, a:active {
         margin: auto;
         z-index: 10;
     }
+
+    td:nth-of-type(3n), td:nth-of-type(4n), td:nth-of-type(5n)   {
+        display: none;
+    }
+
+    th:nth-of-type(3n), th:nth-of-type(4n), th:nth-of-type(5n)   {
+        display: none;
+    }
 }
