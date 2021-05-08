@@ -35,7 +35,7 @@ a:hover, a:link, a:visited, a:active {
     background-image: url('../images/mainbg.jpg');
     background-size: cover;
     background-position: center center;
-    max-width: 40em;
+    max-width: 60em;
     padding: 3em;
     border-radius: var(--radius-m);
     margin: auto;
@@ -60,8 +60,6 @@ a:hover, a:link, a:visited, a:active {
     margin: auto;
 }
 
-.bio {
-}
 
 .social-links {
     display: flex;
@@ -73,6 +71,10 @@ a:hover, a:link, a:visited, a:active {
 .social-icon {
     width: 2em;
     height: 2em;
+}
+
+.rounded-corners {
+    border-radius: var(--radius-m);
 }
 
 /*Titles*/
@@ -115,17 +117,32 @@ a:hover, a:link, a:visited, a:active {
 }
 
 @media (max-width: 600px ) {
+
+    body {
+        display: flex;
+        flex-direction: column;
+        padding: .2em;
+    }
+
+    html {
+        margin-top: 2em;
+    }
+
     .social-icon {
-        width: 1em;
-        height: 1em;
+        width: 1.5em;
+        height: 1.5em;
     }
 
     .cardBG {
         max-width: 25em;
-        padding: 2em;
+        padding: 1em;
         border-radius: var(--radius-m);
         margin: auto;
         margin-top: -2.5em;
+    }
+
+    .card {
+        padding: 1rem;
     }
 
     
@@ -134,7 +151,7 @@ a:hover, a:link, a:visited, a:active {
         height: 8rem;
         width: 8rem;
         box-shadow: rgba(0, 0, 0, .2) 5px 5px 5px;
-        margin-bottom: -2em;
+        margin-bottom: -1em;
     }
 
     .bioTitle {
