@@ -124,6 +124,10 @@ a:hover, a:link, a:visited, a:active {
         padding: .2em;
     }
 
+    h1 {
+        font-size: 1em;
+    }
+
     html {
         margin-top: 2em;
     }
@@ -162,6 +166,10 @@ a:hover, a:link, a:visited, a:active {
         align-items: center;
         margin: auto;
         z-index: 10;
+    }
+
+    .pres-video {
+        height: 250px;
     }
 
     td:nth-of-type(3n), td:nth-of-type(4n), td:nth-of-type(5n)   {
