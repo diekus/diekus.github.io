@@ -1,0 +1,11 @@
+{
+  "web_apps": [
+    {
+      "manifest": "https://diek.us/pwinter/manifest.json",
+      "details": {
+        "paths": ["/*"],
+        "exclude_paths": [""]
+      }
+    }
+  ]
+}
