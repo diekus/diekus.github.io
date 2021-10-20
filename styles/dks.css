@@ -232,11 +232,6 @@ article h3 {
         --max-width: null;
     }
 
-    body, html, main{
-        margin: 10px;
-        padding: 20px;
-    }
-
     header {
         display: flex;
         flex-direction: column;
