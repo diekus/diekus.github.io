@@ -10,37 +10,75 @@
     <link rel="shortcut icon" href="./images/favicon.png" type="image/x-icon">
 </head>
 <body>
-    <section id="sec-main">
-        <h1 class="title main-title"><span class="titleP1">Hola! I'm diekus</span></h1>
-        <span class="card main-nav">
-            <p><a href="./me.html">about me👋</a></p>
-            <p><a href="./pres.html">presentations 👨‍🏫</a></p>
-            <p><a href="mailto://diekus@gmail.com">get in touch and say hi 📫</a></p>
-        </span>
-    </section>
-    <section id="sec-hero">
-        <h1 class="title"><span class="titleP1">Latest in</span> <span class="titleP2"> Progressive Web Apps</span></h1>
-        <div class="card">
-            <h2>The Manifest file</h2>
-            <p>Read about why keeping an updated manifest file is key to taking advantage of the newest web capabilities, platform integrations and discovery in app repos.  </p>
-            <h2>Window Controls Overlay</h2>
-            <p>The Edge team is testing Window Controls Overlay, a way to customize the title bar of a PWA. Here's a comprehensive guide to mastering this new capability.</p>
+    <header>
+        <h1 class="multicolor-h1">Hola, I'm diekus</h1>
+        <p class="site-descrip">I am a PM from <a href="https://visitcostarica.com">🇨🇷</a> working on PWA platform features. Here you can find information about <a href="diekus.html">me</a>, my projects, conferences and other things I am involved with.</p>
+        <div class="socials">
+            <a href="https://twitter.com/diekus"><img class="social-icon" src="images/ico-twitter.svg"></a>
+            <a href="https://github.com/diekus"><img class="social-icon" src="images/ico-github.svg"></a>
+            <a href="https://instagram.com/diekus"><img class="social-icon" src="images/ico-instagram.svg"></a>
+            <a href="https://reddit.com/user/diekus"><img class="social-icon" src="images/ico-reddit.svg"></a>
+            <a href="https://uk.linkedin.com/in/diekus"><img class="social-icon" src="images/ico-linkedin.svg"></a>
         </div>
-    </section>
-    <section id="sec-featured">
-        <h1 class="title"><span class="titleP1">Featured</span> <span class="titleP2">Content</span></h1>
-        
-        <article class="card card-corner">
-            <h2 class="card-title"><img src="./images/folddevice.svg" class="icon-card-l">
-            Device Posture API</h2>
-            <p><a href="https://w3c.github.io/device-posture/">This is the editor's draft for the Device Posture API</a> (formerly Screen Fold), an API that allows to access the posture and angle values in which a dual screen/foldable device is in. Our thinking is along the lines that this might allow you to create layouts that adapt to newer devices. <a href="https://github.com/w3c/device-posture/issues">Let us know what you think about this!</a></p>
-        </article>
-        <article class="card card-corner">
-            <h2 class="card-title"><img src="./images/ignite.png" class="icon-card-l">
-            PWAs on Edge and Windows</h2>
-            <iframe class="rounded-corners" width="100%" height="200px" src="https://www.youtube.com/embed/xUNC8MjW_iI?list=PLar6hVjPOFzIxIf232Vhu73tgIMEEme3t" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-            <p>PWAs on desktop show their benefits when they integrate with the Operating System.</p>
-        </article>
-    </section>
+    </header>
+    <main>
+        <section id="blue-sec" class="card">
+            <h2>Current Projects</h2>
+            <article>
+                <h3><a href="https://aka.ms/pwa">PWAs @ MS Edge</a></h3>
+                <div class="card-item">
+                    <img src="images/edge-logo.svg" alt="Device Posture API logo" class="card-item-img">
+                    <p>Working with the Edge team on cutting edge features.</p>
+                </div>
+            </article>
+            <article>
+                <h3><a href="https://w3c.github.io/device-posture/">Device Posture API</a></h3>
+                <div class="card-item">
+                    <img src="images/DevicePostureAPI-logo.svg" alt="Device Posture API logo" class="card-item-img">
+                    <p>Experimental API for foldables, dual screens, and postures of devices in general.</p>
+                </div>
+            </article>
+        </section>
+        <section id="amber-sec" class="card">
+            <h2>PWA corner</h2>
+            <article>
+                <h3><a href="https://wicg.github.io/window-controls-overlay/">Window Controls Overlay</a></h3>
+                <p>🎨 Take control of the title bar area on installed web apps. <a href="https://docs.microsoft.com/en-us/microsoft-edge/progressive-web-apps-chromium/how-to/window-controls-overlay">Learn more</a>.</p>
+            </article>
+            <article>
+                <h3><a href="https://docs.microsoft.com/en-us/microsoft-edge/progressive-web-apps-chromium/how-to/handle-protocols">PWA as Protocol Handlers</a></h3>
+                <p>📥 Let your installed web apps handle existing and custom schemes.</p>
+            </article>
+            <article>
+                <h3><a href="https://docs.microsoft.com/en-us/microsoft-edge/progressive-web-apps-chromium/how-to/handle-urls">PWA as URL Handlers</a></h3>
+                <p>🔗 Your installed web app can handle URLs from other apps.</p>
+            </article>
+        </section>
+        <section id="pink-sec" class="card">
+            <h2>Other</h2>
+            <article>
+                <h3><a href="https://diek.us/pwinter">The PWinter</a></h3>
+                <div class="card-item">
+                    <img src="images/pwa-printer-logo.svg" alt="The PWinter logo" class="card-item-img">
+                    <p>Create custom colored PWA logos on demand.</p>
+                </div>
+            </article>
+            <article>
+                <h3>Past Presentations</h3>
+                <p><a href="pres.html">List of previous events</a> I have participated in.</p>
+            </article>
+        </section>
+        <section id="green-sec" class="card">
+            <h2>Media</h2>
+            <iframe height="250px" width="100%" src="https://www.youtube.com/embed/qbh_u2hvIjg?list=PLar6hVjPOFzIxIf232Vhu73tgIMEEme3t" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <article>
+                <h3>Integrating PWAs with desktop OSs</h3>
+                <p><a href="https://www.w3.org/2021/10/TPAC/demos/pwa.html">Check out</a> the ways you can integrate a PWA into your desktop OS.</p>
+            </article>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; diekus 2021</p>
+    </footer>
 </body>
 </html>
