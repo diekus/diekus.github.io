@@ -227,6 +227,16 @@ article h3 {
 }
 
 @media (max-width: 700px) {
+
+    :root {
+        --max-width: null;
+    }
+
+    body, html, main{
+        margin: 10px;
+        padding: 20px;
+    }
+
     header {
         display: flex;
         flex-direction: column;
