@@ -158,3 +158,26 @@ article:hover {
     float:right;
     align-self: flex-end;
 }
+
+@media (max-width: 700px) {
+    header {
+        display: flex;
+        flex-direction: column-reverse;
+        justify-content: space-between;
+        align-items: center;
+        grid-column: 1 / -1;
+        grid-row: 1 / 2;
+    }
+
+    .socials {
+        flex-wrap: wrap;
+    }
+
+    .social_icon {
+        margin: 10px 20px;
+    }
+
+    body {
+        grid-template: 1fr auto 1fr 1fr / 1fr 1fr 1fr;
+    }
+  }
