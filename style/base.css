@@ -113,6 +113,18 @@ main {
     transition: transform ease-in var(--trans-anim-delay), box-shadow ease var(--trans-anim-delay);
 }
 
+#event-table {
+    grid-row: 3 / 4;
+    grid-column: 1 / -1;
+}
+
+.yt_embed{
+    grid-row: 2 / 3;
+    grid-column: 1 / -1;
+    justify-self: center;
+    margin: 2em;
+}
+
 footer {
     padding: 6rem 0.5rem 2.5rem;
     display: flex;
