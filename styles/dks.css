@@ -216,9 +216,9 @@ footer {
         margin: 0px;
     }
 
-    
     .dksheader {
         border-radius: 0px 0px var(--border-rad) var(--border-rad);
+        padding: 1rem;
         position: fixed;
         top: 0rem;
         left:auto;
