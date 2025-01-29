@@ -180,7 +180,7 @@ footer {
     position:fixed;
     bottom: 0px;
     background: var(--bg-color);
-    padding: 2rem;
+    padding: .6rem;
     margin: 0px;
     display: flex;
     flex-direction: row;
