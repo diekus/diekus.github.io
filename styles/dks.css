@@ -270,6 +270,11 @@ footer {
         width: 45px;
     }
 
+    .profileBorder {
+        height: 45px;
+        width: 45px;
+    }
+
     .social_icon {
         margin: 11px;
     }
