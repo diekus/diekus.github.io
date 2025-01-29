@@ -1,0 +1,10 @@
+:root {
+    --bg-color: #1C2E2D;
+    --bg-grad: linear-gradient(45deg, #3E6766 0%, #1C2E2D 100%);
+    --bg-footer: linear-gradient(0deg, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.0) 100%);
+    --bg-main: rgba(0, 0, 0, 0.5);
+    --bg-header: rgba(0, 0, 0, 0.1);
+    --link-color: #FF6E00;
+    --link-visited: #FF5700;
+    --link-hover: #ff9100;
+}
