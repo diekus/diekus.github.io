@@ -266,8 +266,8 @@ footer {
 
 @media (max-width: 500px) {
     .headshot {
-        height: 47px;
-        width: 47px;
+        height: 50px;
+        width: 50px;
     }
 
     .profileBorder {
