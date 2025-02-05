@@ -310,6 +310,7 @@ footer {
         overflow: scroll;
         border-radius: 0px;
         position: fixed;
+        top: 0px;
 
         scroll-snap-type: mandatory;
         scroll-snap-points-y: repeat(90dvw);
