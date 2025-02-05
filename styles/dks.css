@@ -309,8 +309,8 @@ footer {
     .main {
         grid-column: 1 / -1;
         grid-row: 1 / 2;
-        margin: .5rem;
-        padding: 2rem;
+        margin: 0px;
+        padding: 3rem;
         max-width:100dvw;
         max-height: min-content;
         overflow: scroll;
