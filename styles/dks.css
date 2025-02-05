@@ -13,6 +13,10 @@
     --maxWidth: 1024px;
 }
 
+* {
+    box-sizing: border-box;
+}
+
 html {
     color-scheme: light dark;
 
