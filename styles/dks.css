@@ -314,7 +314,7 @@ footer {
 
         scroll-snap-type: mandatory;
         scroll-snap-points-y: repeat(90dvw);
-        scroll-snap-type: y mandatory;
+        scroll-snap-type: x mandatory;
 
         display: flex;
         flex-direction: row;
@@ -327,6 +327,12 @@ footer {
     section {
         min-width: 90dvw;
         scroll-snap-align: center;
+        scroll-snap-stop: always;
+    }
+
+    .btnScroll {
+        position: fixed;
+        bottom: 9rem;
     }
 
     footer {
