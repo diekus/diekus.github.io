@@ -155,7 +155,10 @@ p, ul {
     flex-direction: column;
     align-content: start;
     background-color: var(--bg-main);
+}
 
+.btnScroll {
+    display:none ;
 }
 
 .headshot {
@@ -315,6 +318,7 @@ footer {
         scroll-snap-type: mandatory;
         scroll-snap-points-y: repeat(90dvw);
         scroll-snap-type: x mandatory;
+        scroll-behavior: smooth;
 
         display: flex;
         flex-direction: row;
@@ -332,7 +336,16 @@ footer {
 
     .btnScroll {
         position: fixed;
-        bottom: 9rem;
+        bottom: 7rem;
+        display:block;
+        padding: 1rem;
+        justify-self: center;
+        font-size: 1.3rem;
+        border-color: var(--border-color);
+        background-color: var(--bg-header);
+        border-radius: var(--border-rad);
+        border: solid;
+        color: var(--bg-color);
     }
 
     footer {
