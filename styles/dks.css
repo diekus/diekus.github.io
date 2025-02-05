@@ -309,6 +309,7 @@ footer {
         max-height: min-content;
         overflow: scroll;
         border-radius: 0px;
+        position: fixed;
 
         scroll-snap-type: mandatory;
         scroll-snap-points-y: repeat(90dvw);
