@@ -64,7 +64,7 @@ body {
     padding: var(--bubblePadd);
     backdrop-filter: blur(var(--blur-amount));
     position: fixed;
-    top: 2rem;
+    top: 3rem;
     left: 0px;
     max-width: 50px;
     display: flex;
@@ -310,7 +310,7 @@ footer {
         grid-column: 1 / -1;
         grid-row: 1 / 2;
         margin: 0px;
-        padding: 5dvw;
+        padding: 0dvw;
         max-width:90dvw;
         max-height: min-content;
         overflow: scroll;
@@ -319,7 +319,7 @@ footer {
         top: 0px;
 
         scroll-snap-type: mandatory;
-        scroll-snap-points-y: repeat(90dvw);
+        scroll-snap-points-y: repeat(100dvw);
         scroll-snap-type: x mandatory;
         scroll-behavior: smooth;
 
@@ -328,11 +328,11 @@ footer {
     }
 
     p {
-        max-width: 90dvw;
+        max-width: 100dvw;
     }
 
     section {
-        min-width: 90dvw;
+        min-width: 100dvw;
         scroll-snap-align: center;
         scroll-snap-stop: always;
     }
