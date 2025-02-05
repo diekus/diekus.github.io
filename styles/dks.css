@@ -64,7 +64,7 @@ body {
     padding: var(--bubblePadd);
     backdrop-filter: blur(var(--blur-amount));
     position: fixed;
-    top: 3rem;
+    top: 4rem;
     left: 0px;
     max-width: 80px;
     display: flex;
