@@ -7,7 +7,7 @@
     --border-anim-delay: 0.3s;
 
     --page-margin-top: 2rem;
-    --bubblePadd: 2rem;
+    --bubblePadd: 1.5rem;
     --bubbleMarg: .8rem;
 
     --maxWidth: 1024px;
@@ -309,7 +309,7 @@ footer {
     .main {
         grid-column: 1 / -1;
         grid-row: 1 / 2;
-        margin: 0px;
+        margin: .5rem;
         padding: 2rem;
         max-width:100dvw;
         max-height: min-content;
