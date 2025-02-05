@@ -315,7 +315,7 @@ footer {
         max-width:100dvw;
         max-height: min-content;
         overflow: scroll;
-        border-radius: 0px;
+        border-radius: 0px 0px var(--border-rad) var(--border-rad);
         position: fixed;
         top: 0px;
 
