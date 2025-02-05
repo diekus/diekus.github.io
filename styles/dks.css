@@ -310,7 +310,7 @@ footer {
         grid-column: 1 / -1;
         grid-row: 1 / 2;
         margin: 0px;
-        padding: 0dvw;
+        padding: 2rem;
         max-width:100dvw;
         max-height: min-content;
         overflow: scroll;
