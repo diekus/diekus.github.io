@@ -66,7 +66,7 @@ body {
     position: fixed;
     top: 4rem;
     left: 0px;
-    max-width: 80px;
+    max-width: 92px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
