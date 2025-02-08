@@ -343,7 +343,7 @@ footer {
 
     .btnScroll {
         position: fixed;
-        bottom: 7rem;
+        bottom: 6rem;
         display:block;
         padding: 1rem;
         justify-self: center;
@@ -360,5 +360,6 @@ footer {
         z-index: 120;
         font-size: .6rem;
         color: #00000066;
+        padding: .2rem;
     }
 }
