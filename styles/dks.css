@@ -20,6 +20,8 @@
 html {
     color-scheme: light dark;
 
+    color: var(--text);
+
     margin: 0px;
 
     background-color: var(--bg-color);
@@ -347,10 +349,10 @@ footer {
         justify-self: center;
         font-size: 1.3rem;
         border-color: var(--border-color);
-        background-color: var(--bg-header);
+        background-color: var(--bg-main);
         border-radius: var(--border-rad);
         border: solid;
-        color: var(--bg-color);
+        color: var(--text);
     }
 
     footer {
