@@ -1,0 +1,10 @@
+:root {
+    --bg-color: #3D3D3D;
+
+    --bg-main: rgba(0, 0, 0, 0.6);
+    --bg-header: rgba(0, 0, 0, 0.3);
+    --link-color: #FF6E00;
+    --link-visited: #FF5700;
+    --link-hover: #ff9100;
+    --text: #fefefe;
+}
