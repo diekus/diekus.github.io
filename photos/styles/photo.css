@@ -91,6 +91,16 @@ header {
     .photo-gallery {
         grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
     }
+
+}
+
+@media (max-width: 500px) {
+
+    .gallery-intro {
+        display: flex;
+        flex-direction: column;
+        padding: 24px;
+    }
 }
 
 
