@@ -41,6 +41,7 @@ header {
     border-radius: var(--img-border-radius);
     justify-self: center;
     align-self: center;
+    margin: 1em 0em;
 }
 
 .gallery-text {
