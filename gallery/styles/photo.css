@@ -96,6 +96,21 @@ h1, h2 {
     transform: scale(1.04);
 }
 
+footer {
+    width: 100vw;
+    position:fixed;
+    bottom: 0px;
+    background: var(--bg-color);
+    padding: .6rem;
+    margin: 0px;
+    display: flex;
+    flex-direction: row;
+    justify-items: center;
+    align-content: space-around;
+    justify-content: center;
+    z-index: 50;
+}
+
 @media (max-width: 600px) {
     .photo-gallery {
         grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
