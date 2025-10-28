@@ -34,6 +34,14 @@ header {
     z-index: 1000;
 }
 
+h1, h2 {
+    font-size: 3rem;
+    font-family: "Zen Tokyo Zoo", serif;
+    font-weight: 400;
+    font-style: normal;
+    margin: .2rem;
+}
+
 .gallery-prof-pic {
     width: 100%;
     max-width: 150px;
@@ -107,4 +115,10 @@ header {
 
 @supports (display:masonry) {
     .photo-gallery { display: masonry; }
+}
+
+.zen-tokyo-font {
+    font-family: "Zen Tokyo Zoo", serif;
+    font-weight: 400;
+    font-style: normal;
 }
