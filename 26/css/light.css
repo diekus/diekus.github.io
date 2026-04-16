@@ -1,0 +1,5 @@
+:root {
+    --bgColor: #FAFAFA;
+    --fgColor: #202020;
+    --bubbleBgColor: rgba(200, 200, 200, var(--bubbleOpacity));
+}
