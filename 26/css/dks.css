@@ -10,8 +10,8 @@
     --menuGap: 2.5rem;
     --dropShadowBlur: 10px;
     --dropShadowSpread: 0.1px;
-    --boxShadox0: 0.5rem 0.5rem var(--dropShadowBlur) var(--dropShadowSpread) rgba(255, 0, 128, 0.7), -0.5rem -0.5rem var(--dropShadowBlur) var(--dropShadowSpread) rgba(255, 162, 0, 0.7);
-    --boxShadow1: -0.1rem -0.1rem var(--dropShadowBlur) var(--dropShadowSpread) rgba(255, 162, 0, 0.3), 0.1rem 0.1rem var(--dropShadowBlur) var(--dropShadowSpread) rgba(255, 0, 128, 0.3);
+    --boxShadox1: 0.5rem 0.5rem var(--dropShadowBlur) var(--dropShadowSpread) rgba(255, 0, 128, 0.7), -0.5rem -0.5rem var(--dropShadowBlur) var(--dropShadowSpread) rgba(255, 162, 0, 0.7);
+    --boxShadow0: -0.1rem -0.1rem var(--dropShadowBlur) var(--dropShadowSpread) rgba(255, 162, 0, 0.3), 0.1rem 0.1rem var(--dropShadowBlur) var(--dropShadowSpread) rgba(255, 0, 128, 0.3);
     --trans-anim-delay: 0.3s;
 }
 
@@ -46,16 +46,19 @@ body {
 }
 
 .intro:hover {
-    box-shadow: var(--boxShadow1);
+    box-shadow: var(--boxShadow0);
     transform: translateY(-0.3rem);
 }
 
 main::before {
     content: 'hola';
     font-size: 3rem;
+    font-family: "Monoton", sans-serif;
+    font-weight: 400;
+    font-style: normal;
     color: var(--fgColor);
     position: fixed;
-    margin: 0.7rem 0rem -3rem 1.5rem;
+    margin: 0rem 0rem 0rem 1.2rem;
     z-index: 100;
     
 }
@@ -98,6 +101,13 @@ header {
     box-shadow: -3px 2px var(--midground), -.1em 0 .4em var(--foreground);
     transition: transform ease-in var(--trans-anim-delay), box-shadow ease var(--trans-anim-delay);
 }
+
+.monoton-regular {
+  font-family: "Monoton", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
 
 footer {
     position: absolute;

@@ -25,7 +25,6 @@ html {
     margin: 0px;
 
     background-color: var(--bg-color);
-    background-image: url(/images/bg.webp);
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
