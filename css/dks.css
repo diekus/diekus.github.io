@@ -75,7 +75,6 @@ h2 {
     line-height: var(--pHeight);
     box-shadow: none;
     transition: box-shadow ease-in var(--trans-anim-delay), transform ease-out 0.5s;
-    
 }
 
 .intro:hover {
@@ -239,4 +238,14 @@ footer {
 
 .card-cat-post:hover, .card-cat-post:hover .art-cat-post {
     box-shadow: var(--boxShadowPink);
+}
+
+
+/*mobile*/
+
+@media (max-width: 600px) {
+  .intro {
+    margin: 0.7rem;
+    padding: 0.3rem;
+}
 }
