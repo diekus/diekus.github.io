@@ -251,4 +251,8 @@ footer {
     main {
         margin: 10px;
     }
+
+    .socials {
+        margin: 0.1rem;
+    }
 }
