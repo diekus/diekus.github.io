@@ -244,8 +244,11 @@ footer {
 /*mobile*/
 
 @media (max-width: 600px) {
-  .intro {
-    margin: 0.7rem;
-    padding: 0.3rem;
-}
+    .intro {
+        margin: 0.7rem;
+    }
+
+    main {
+        margin: 10px;
+    }
 }
