@@ -1,0 +1,242 @@
+:root{
+    font-family: sans-serif;
+    height: 100dvh;
+    width: 100dvw;
+    --light: #FAFAFA;
+    --dark: #202020;
+    --backgroundHeader: rgba(50, 50, 50, 0.75);
+    --externalMargin: 2rem;
+    --bubbleRadius: 20px;
+    --bubbleOpacity: 0.7;
+    --pHeight: 1.5rem;
+    --menuGap: 2.5rem;
+    --dropShadowBlur: 10px;
+    --dropShadowSpread: 0.1px;
+    --boxShadox1: 0.5rem 0.5rem var(--dropShadowBlur) var(--dropShadowSpread) rgba(255, 187, 0, 0.8);
+    --boxShadow0: -0.1rem -0.1rem var(--dropShadowBlur) var(--dropShadowSpread) rgba(255, 145, 0, 0.8);
+    --boxShadowBlue: -0.1rem -0.1rem var(--dropShadowBlur) var(--dropShadowSpread) rgba(8, 177, 255, 0.8);
+    --boxShadowGreen: -0.1rem -0.1rem var(--dropShadowBlur) var(--dropShadowSpread) rgba(81, 255, 0, 0.8);
+    --boxShadowPink: -0.1rem -0.1rem var(--dropShadowBlur) var(--dropShadowSpread) rgba(255, 2, 108, 0.8);
+        
+    --trans-anim-delay: 0.3s;
+    --shade: rgba(0, 0, 0, 0.5);
+    --tint: rgba(255, 255, 255, 0.2);
+    --backdropCardBlur: 20px;
+     /*cards*/
+     --card-padding: 1rem;
+    
+}
+
+/*fonts*/
+
+.monoton-regular {
+  font-family: "Monoton", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.baumans-regular {
+  font-family: "Baumans", system-ui;
+  font-weight: 400;
+  font-style: normal;
+}
+
+body {
+    color: var(--fgColor);
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+    margin: 0px;
+    padding: 0px;
+
+    background: var(--bgColor);
+    background-position: center 50dvh;
+    background-blend-mode: darken;
+    background-repeat: no-repeat;
+}
+
+h2 {
+    font-family: "Baumans", sans-serif;
+    font-weight: bold;
+    font-style: normal;
+    font-size: 1.1rem;
+}
+
+.intro {
+    margin: var(--externalMargin);
+    padding: 1.5rem;
+    max-width: 30rem;
+    border-radius: var(--bubbleRadius);
+    background-color: var(--bubbleBgColor);
+    color: var(--fgColor);
+    line-height: var(--pHeight);
+    box-shadow: none;
+    transition: box-shadow ease-in var(--trans-anim-delay), transform ease-out 0.5s;
+    
+}
+
+.intro:hover {
+    box-shadow: var(--boxShadow0);
+    transform: translateY(-0.3rem);
+}
+
+.profilePic {
+    border-radius: 500px;
+    float: left;
+    shape-outside: circle(50%);
+    margin: 0.7rem;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: var(--externalMargin);
+    margin: var(--externalMargin);
+    margin-bottom: 10dvh;
+}
+
+header {
+    position: fixed;
+    bottom: 1.5rem;
+    display: flex;
+    width: fit-content;
+    background-color: rgba(50, 50, 50, 0.75);
+    color: var(--light);
+    backdrop-filter: blur(20px);
+    flex-direction: row;
+    gap: var(--menuGap);
+    padding: 1rem;
+    margin: 2rem;
+    border-radius: 100px;
+    transform: none;
+    transition: transform ease-out 0.2s;
+}
+
+header:hover {
+    transform: translateY(-0.3rem) scale(1.1, 1.1);
+}
+
+a, a:link, a:visited {
+    color: var(--foreground);
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+p {
+    line-height: var(--pHeight);
+}
+
+/*socials*/
+
+.socials {
+    margin: .5rem;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+}
+
+.social_icon {
+    width: 30px;
+    height: 30px;
+    margin: 15px;
+    border-radius: 45%;
+    transition: transform ease-out var(--trans-anim-delay), box-shadow ease var(--trans-anim-delay);
+}
+
+.social_icon:hover {
+    transform: translateY(-0.1rem);
+    box-shadow: -3px 2px var(--midground), -.1em 0 .4em var(--foreground);
+    transition: transform ease-in var(--trans-anim-delay), box-shadow ease var(--trans-anim-delay);
+}
+
+
+footer {
+    position: relative;
+    bottom: 1rem;
+    margin: auto;
+    color: var(--fgColor);
+    background-color: var(--bgColor);
+    font-size: 0.7rem;;
+    opacity: 60%;
+    border-radius: 100px;
+    padding: 0.2rem;
+}
+
+/*categories*/
+.art-cat {
+    border-radius: 100px;
+    font-size: 0.6rem;
+    padding: 0.2rem 0.8rem;
+    color: var(--fgTagOrange);
+    background: var(--bgTagOrange);
+    box-shadow: none;
+    transition: box-shadow ease-out var(--trans-anim-delay);
+}
+
+.art-cat-app {
+    color: var(--fgTagBlue);
+    background: var(--bgTagBlue);
+}
+
+.art-cat-talk {
+    color: var(--fgTagGreen);
+    background: var(--bgTagGreen);
+}
+
+.art-cat-post {
+    color: var(--fgTagPink);
+    background: var(--bgTagPink);
+}
+
+/*cards*/
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    grid-gap: 1rem;
+    justify-content: center;
+}
+
+@supports (display:grid-lanes) {
+  .cards {
+    display: grid-lanes;
+  }
+}
+
+.card {
+    padding: var(--card-padding);
+    border-radius: var(--bubbleRadius);
+    background-color: var(--tint);
+    backdrop-filter: blur(var(--backdropCardBlur));
+    -webkit-backdrop-filter: blur(var(--backdropCardBlur));
+    box-shadow: none;
+    transition: transform ease-in var(--trans-anim-delay), box-shadow ease-in var(--trans-anim-delay);   
+}
+
+.card:hover {
+    transform: translateY(-0.3rem);
+    box-shadow: var(--boxShadow0);
+}
+
+.card-cat-app:hover, .card-cat-app:hover .art-cat-app  {
+    box-shadow: var(--boxShadowBlue);
+}
+
+.card-cat-talk:hover, .card-cat-talk:hover .art-cat-talk {
+    box-shadow: var(--boxShadowGreen);
+}
+
+.card-cat-post:hover, .card-cat-post:hover .art-cat-post {
+    box-shadow: var(--boxShadowPink);
+}

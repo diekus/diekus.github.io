@@ -5,27 +5,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="keywords" content="web, standards, web apps, pwa, foldables, javascript, html">
     <meta name="application-title" content="personal web">
-    <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon">
+    <link rel="shortcut icon" href="/imgs/favicon.png" type="image/x-icon">
     <link rel="manifest" href="manifest.json">
     <title>diek.us : Diego Gonzalez</title>
-    <link rel="stylesheet" type="text/css" href="styles/light.css" media="(prefers-color-scheme: light)">
-    <link rel="stylesheet" type="text/css" href="styles/dark.css" media="(prefers-color-scheme: dark)">
-    <link rel="stylesheet" type="text/css" href="styles/dks.css">
-
+    <link rel="stylesheet" type="text/css" href="css/light.css" media="(prefers-color-scheme: light)">
+    <link rel="stylesheet" type="text/css" href="css/dark.css" media="(prefers-color-scheme: dark)">
+    <link rel="stylesheet" type="text/css" href="css/dks.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Zen+Tokyo+Zoo&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Baumans&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Monoton&display=swap" rel="stylesheet">
     
-    <script src="scripts/dks.js" defer></script>
+
 </head>
 <body>
+    <main>
 
-    <header class="dksheader">
-        <h1 class="mainTitle">diek.us</h1>
-        <span class="profileBorder" width="80px" height="80px">
-            <img src="images/profile.webp" class="headshot" width="80px" height="80px">
-        </span>
-        
+        <div class="intro">
+            <span><img class="profilePic" src="./imgs/diekus.jpg" alt="Portrait of Diego Gonzalez Zuniga" width="90px" height="90px"></span>
+            <p>I am Diego González, a British-Costa Rican engineer living in London. I enjoy photography, skiing, and gadgets!</p>
+
+            <p>For work, I do tech. Generally I can be found tinkering with open-source AI models and web technologies.</p>
+            <p>The past decade I've been deep into web standards and contributing new capabilites to web apps, foldables and XR at Microsoft and Samsung.</p>
+        </div>
         <span class="socials">
             <a href="https://bsky.app/profile/diekus.bsky.social">
                 <img src="/images/SVG/bluesky.svg" alt="Bluesky logo" class="social_icon" width="35px" height="35px">
@@ -36,72 +38,50 @@
             <a href="https://instagram.com/diekus">
                 <img src="/images/SVG/instagram.svg" alt="instagram logo" class="social_icon" width="35px" height="35px">
             </a>
-            <!-- <a href="https://toot.cafe/@diekus">
+            <a href="https://toot.cafe/@diekus">
                 <img src="/images/SVG/mastodon.svg" alt="Mastodon logo" class="social_icon" width="35px" height="35px">
-            </a> -->
+            </a>
             <a href="https://uk.linkedin.com/in/diekus">
                 <img src="/images/SVG/linkedin.svg" alt="LinkedIn logo" class="social_icon" width="35px" height="35px">
             </a>
             <!--a href="https://medium.com/@diekus">
                 <img src="/images/SVG/medium.svg" alt="Medium logo" class="social_icon" width="35px" height="35px">
             </a-->
-            <a href="https://reddit.com/user/diekus">
+            <!--<a href="https://reddit.com/user/diekus">
                 <img src="/images/SVG/reddit.svg" alt="reddit logo" class="social_icon" width="35px" height="35px">
-            </a>
+            </a> -->
         </span>
 
-    </header>
+        <div class="cards">
 
-    <div class="main">
-        <section class="fullGridSpan">
-            <h2>HOLA</h2>
-            <p>I am Diego González, a British-Costa Rican engineer living in London. I enjoy photography 📷, skiing ⛷️ and web standards 🌐. In the past I have worked alongside teams at Microsoft and Samsung as a Program Manager leading the web platform to its full potential.</p>
-        </section>
+            <article class="card card-cat-app">
+                <h2><a href="https://diek.us/bubble">bubble 360 image viewer</a></h2>
+                <span class="art-cat art-cat-app">apps</span>
+                <p>Love 360 content so it made sense to make a way of easily viewing images from the web.</p>
+            </article>
 
-        <section class="section-bubble">
-            <h2>apps</h2>
-            <p>Useful little applications by yours truly:</p>
-            <ul>
-                <li><a href="https://diek.us/bubble">🫧 bubble</a>, an equirectangular image viewer on the web</li>
-            </ul>
-        </section>
+            <article class="card card-cat-talk">
+                <h2><a href="https://www.youtube.com/watch?v=a9Y3mNmNZZA&list=PLar6hVjPOFzIxIf232Vhu73tgIMEEme3t&index=1">Site or app?</a></h2>
+                <span class="art-cat art-cat-talk">talk</span>
+                <p>In this talk I go through 10 quick tips that allow you to use your website as an app.</p>
+            </article>
 
-        <section class="section-bubble">
-            <h2>web specs</h2>
-            <p>I 💙 the web. I'm involved in:</p>
-            <ul>
-                <li><a href="https://www.w3.org/TR/appmanifest/">Web Application Manifest</a></li>
-                <li><a href="https://www.w3.org/TR/device-posture/">Device Posture API</a></li>
-                <li><a href="https://www.w3.org/TR/badging/">Badging API</a></li>
-                <li><a href="https://www.w3.org/TR/image-resource/">Image Resource</a></li>
-                <li><a href="https://wicg.github.io/window-controls-overlay/">Window Controls Overlay</a></li>
-            </ul>
-            <p>Some features I've PM'ed:</p>
-            <ul>
-                <li><a href="https://github.com/MicrosoftEdge/MSEdgeExplainers/blob/main/DocumentSubtitle/explainer.md"><code>application-title</code> meta tag </a></li>
-                <li><a href="https://developer.mozilla.org/en-US/docs/Web/API/Window_Controls_Overlay_API">WCO</a></li>
-                <li><a href="https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/manifest.json/protocol_handlers">Protocol Handling for Web Apps</a></li>
-            </ul>
-        </section>
+            <article class="card card-cat-post">
+                <h2><a href="https://blogs.windows.com/msedgedev/author/diego-gonzalez/">My posts @ Microsoft Edge</a></h2>
+                <span class="art-cat art-cat-post">post</span>
+                <p>Some of the posts I wrote while working with the Microsoft Edge team.</p>
+            </article>
+            
+        </div>
 
-        <section class="section-bubble">
-            <h2>latest</h2>
-            <p>I am <em>currently</em> working on:</p>
-            <ul>
-                <li><a href="https://aka.ms/webinstall">Web Install API</a></li>
-            </ul>
-            <p>Other shenanigans:</p>
-            <ul>
-                <li><a href="https://blogs.windows.com/msedgedev/author/diego-gonzalez/">📄 My posts @ MS Edge blog</a></li>
-                <li><a href="https://www.youtube.com/playlist?list=PLar6hVjPOFzIxIf232Vhu73tgIMEEme3t">📺 Recorded presentations</a></li>
-            </ul>
-        </section> 
-    </div>
-
-    <input type="button" value=">>" class="btnScroll"></input>
-
+    </main>
+    <!--header>
+        <span>posts</span>
+        <span>apps</span>
+        <span>talks</span>
+    </header-->
     <footer>
-        &copy; diekus
+        &copy; diekus 2026
     </footer>
 </body>
 </html>
