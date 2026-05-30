@@ -10,6 +10,7 @@
   <link rel="icon" href="icons/favicon.png" type="image/png">
   <link rel="apple-touch-icon" href="icons/icon-192.png">
   <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/social.css">
   <title>Diego González · diekus</title>
 </head>
 <body>
@@ -36,7 +37,7 @@
           <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
         </a>
         <!-- Mastodon -->
-        <a class="social-link" href="https://mastodon.social/@diekus" aria-label="Mastodon" target="_blank" rel="noopener noreferrer me">
+        <a class="social-link" href="https://toot.cafe/@diekus" aria-label="Mastodon" target="_blank" rel="noopener noreferrer me">
           <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true"><path d="M23.268 5.313c-.35-2.578-2.617-4.61-5.304-5.004C17.51.242 15.792 0 11.813 0h-.03c-3.98 0-4.835.242-5.288.309C3.882.692 1.496 2.518.917 5.127.64 6.412.61 7.837.661 9.143c.074 1.874.088 3.745.26 5.611.118 1.24.325 2.47.62 3.68.55 2.237 2.777 4.098 4.96 4.857 2.336.792 4.849.923 7.256.38.265-.061.527-.132.786-.213.585-.184 1.27-.39 1.774-.753a.057.057 0 0 0 .023-.043v-1.809a.052.052 0 0 0-.066-.051 20.282 20.282 0 0 1-4.709.545c-2.73 0-3.463-1.284-3.674-1.818a5.593 5.593 0 0 1-.319-1.433.053.053 0 0 1 .066-.054c1.517.363 3.072.546 4.632.546.376 0 .75 0 1.125-.01 1.57-.044 3.224-.124 4.768-.422.038-.008.077-.015.11-.024 2.435-.464 4.753-1.92 4.989-5.604.008-.145.03-1.52.03-1.67.002-.512.167-3.63-.024-5.545zm-3.748 9.195h-2.561V8.29c0-1.309-.55-1.976-1.67-1.976-1.23 0-1.846.79-1.846 2.35v3.403h-2.546V8.663c0-1.56-.617-2.35-1.848-2.35-1.112 0-1.668.668-1.67 1.977v6.218H4.822V8.102c0-1.31.337-2.35 1.011-3.12.696-.77 1.608-1.164 2.74-1.164 1.311 0 2.302.5 2.962 1.498l.638 1.06.638-1.06c.66-.999 1.65-1.498 2.96-1.498 1.13 0 2.043.395 2.74 1.164.675.77 1.012 1.81 1.012 3.12z"/></svg>
         </a>
         <!-- Bluesky -->
@@ -84,25 +85,77 @@
       </div>
       <div class="hero-overlay" aria-hidden="true"></div>
       <div class="hero-content">
-        <div class="hero-portrait-wrap">
-          <img
-            src="images/diekus.jpg"
-            alt="Diego González"
-            class="portrait"
-            width="160"
-            height="160"
-            loading="eager"
-          >
-        </div>
         <div class="hero-text">
+          <div class="hero-portrait-wrap">
+            <img
+              src="images/diekus.jpg"
+              alt="Diego González"
+              class="portrait"
+              width="160"
+              height="160"
+              loading="eager"
+            >
+          </div>
           <h1 class="hero-name">Diego González</h1>
-          <p class="hero-tagline">Web Platform Engineer · Photographer · Human</p>
+          <p class="hero-tagline">Web Platform Engineer · Photographer · Immigrant</p>
           <p class="hero-bio">
-            British-Costa Rican engineer based in London. Enjoys photography, skiing, and gadgets.
-            Spends his days tinkering with open-source AI and web technologies, and the past decade
-            contributing new capabilities to web apps, foldables, and XR at Microsoft and Samsung.
+            British-Costa Rican engineer based in London via Barcelona. Enjoys photography, skiing, and gadgets.
+            Spends his days tinkering with open-source (and proprietary) AI and web technologies, and the past decade
+            contributing new standards and capabilities to web apps, foldables, and XR at Microsoft and Samsung.
           </p>
-          <a href="gallery.html" class="hero-gallery-link">View gallery →</a>
+          <div class="social-pulse">
+            <a class="social-card" id="bluesky-card"
+               href="https://bsky.app/profile/diekus.bsky.social"
+               target="_blank" rel="noopener noreferrer"
+               aria-label="View Bluesky profile">
+              <div class="social-card__badge" aria-hidden="true">
+                <svg viewBox="85 105 342 301" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M159 126c-28-22-74-38-74 14 0 11 6 88 9 101 13 43 57 54 97 48-69 11-87 50-49 89 72 75 104-18 112-42l2-5 2 5c8 24 40 117 112 42 38-39 20-78-49-89 40 6 84-5 97-48 3-13 9-90 9-101 0-52-46-36-74-14-39 29-82 89-97 121-15-32-58-92-97-121Z"/></svg>
+                <span>Bluesky</span>
+              </div>
+              <p class="social-card__text"></p>
+              <img class="social-card__image" src="" alt="" loading="lazy" hidden>
+              <div class="social-card__meta">
+                <time class="social-card__date" datetime=""></time>
+                <div class="social-card__counts">
+                  <span class="social-card__like-item" hidden>
+                    <svg viewBox="0 0 24 24" width="13" height="13" fill="currentColor" aria-hidden="true"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+                    <span class="social-card__likes"></span>
+                  </span>
+                  <span class="social-card__repost-item" hidden>
+                    <svg viewBox="0 0 24 24" width="13" height="13" fill="currentColor" aria-hidden="true"><path d="M7 7h10v3l4-4-4-4v3H5v6h2V7zm10 10H7v-3l-4 4 4 4v-3h12v-6h-2v4z"/></svg>
+                    <span class="social-card__reposts"></span>
+                  </span>
+                </div>
+              </div>
+              <span class="social-card__fallback-text">Find me on Bluesky →</span>
+            </a>
+
+            <a class="social-card" id="mastodon-card"
+               href="https://toot.cafe/@diekus"
+               target="_blank" rel="noopener noreferrer me"
+               aria-label="View Mastodon profile">
+              <div class="social-card__badge" aria-hidden="true">
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M23.268 5.313c-.35-2.578-2.617-4.61-5.304-5.004C17.51.242 15.792 0 11.813 0h-.03c-3.98 0-4.835.242-5.288.309C3.882.692 1.496 2.518.917 5.127.64 6.412.61 7.837.661 9.143c.074 1.874.088 3.745.26 5.611.118 1.24.325 2.47.62 3.68.55 2.237 2.777 4.098 4.96 4.857 2.336.792 4.849.923 7.256.38.265-.061.527-.132.786-.213.585-.184 1.27-.39 1.774-.753a.057.057 0 0 0 .023-.043v-1.809a.052.052 0 0 0-.066-.051 20.282 20.282 0 0 1-4.709.545c-2.73 0-3.463-1.284-3.674-1.818a5.593 5.593 0 0 1-.319-1.433.053.053 0 0 1 .066-.054c1.517.363 3.072.546 4.632.546.376 0 .75 0 1.125-.01 1.57-.044 3.224-.124 4.768-.422.038-.008.077-.015.11-.024 2.435-.464 4.753-1.92 4.989-5.604.008-.145.03-1.52.03-1.67.002-.512.167-3.63-.024-5.545zm-3.748 9.195h-2.561V8.29c0-1.309-.55-1.976-1.67-1.976-1.23 0-1.846.79-1.846 2.35v3.403h-2.546V8.663c0-1.56-.617-2.35-1.848-2.35-1.112 0-1.668.668-1.67 1.977v6.218H4.822V8.102c0-1.31.337-2.35 1.011-3.12.696-.77 1.608-1.164 2.74-1.164 1.311 0 2.302.5 2.962 1.498l.638 1.06.638-1.06c.66-.999 1.65-1.498 2.96-1.498 1.13 0 2.043.395 2.74 1.164.675.77 1.012 1.81 1.012 3.12z"/></svg>
+                <span>Mastodon</span>
+              </div>
+              <p class="social-card__text"></p>
+              <img class="social-card__image" src="" alt="" loading="lazy" hidden>
+              <div class="social-card__meta">
+                <time class="social-card__date" datetime=""></time>
+                <div class="social-card__counts">
+                  <span class="social-card__like-item" hidden>
+                    <svg viewBox="0 0 24 24" width="13" height="13" fill="currentColor" aria-hidden="true"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                    <span class="social-card__likes"></span>
+                  </span>
+                  <span class="social-card__repost-item" hidden>
+                    <svg viewBox="0 0 24 24" width="13" height="13" fill="currentColor" aria-hidden="true"><path d="M7 7h10v3l4-4-4-4v3H5v6h2V7zm10 10H7v-3l-4 4 4 4v-3h12v-6h-2v4z"/></svg>
+                    <span class="social-card__reposts"></span>
+                  </span>
+                </div>
+              </div>
+              <span class="social-card__fallback-text">Find me on Mastodon →</span>
+            </a>
+          </div>
         </div>
       </div>
     </section>
@@ -133,6 +186,7 @@
   <script type="module" src="js/hero.js"></script>
   <script type="module" src="js/projects-home.js"></script>
   <script type="module" src="js/gallery-teaser.js"></script>
+  <script type="module" src="js/social.js"></script>
   <script>
     document.addEventListener('DOMContentLoaded', () => {
       if ('serviceWorker' in navigator) {

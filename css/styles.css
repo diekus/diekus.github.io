@@ -352,10 +352,6 @@
   .hero-content {
     position: relative;
     z-index: 2;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: var(--space-lg);
     max-inline-size: 72rem;
     margin-inline: auto;
     padding-inline: var(--space-lg);
@@ -363,18 +359,27 @@
     text-align: center;
   }
 
-  /* Side-by-side layout at wider viewports */
   @container (min-width: 42rem) {
     .hero-content {
-      flex-direction: row;
       text-align: start;
-      align-items: flex-start;
     }
   }
 
   /* ── Portrait ──────────────────────────────────────── */
   .hero-portrait-wrap {
-    flex-shrink: 0;
+    inline-size: clamp(7rem, 20vw, 10rem);
+    margin-inline: auto;
+    margin-block-end: var(--space-lg);
+  }
+
+  @container (min-width: 42rem) {
+    .hero-portrait-wrap {
+      float: left;
+      margin-inline: 0 var(--space-lg);
+      margin-block: 0 var(--space-sm);
+      shape-outside: circle(50%);
+      shape-margin: var(--space-sm);
+    }
   }
 
   .portrait {
@@ -388,9 +393,12 @@
 
   /* ── Hero text ─────────────────────────────────────── */
   .hero-text {
-    display: flex;
-    flex-direction: column;
-    gap: var(--space-sm);
+  }
+
+  .hero-text::after {
+    content: '';
+    display: table;
+    clear: both;
   }
 
   .hero-name {
@@ -407,13 +415,14 @@
     color: var(--color-text-muted);
     font-weight: 600;
     letter-spacing: 0.01em;
+    margin-block-start: var(--space-sm);
   }
 
   .hero-bio {
     font-size: var(--text-base);
     color: var(--color-text-muted);
-    max-inline-size: 52ch;
     line-height: 1.75;
+    margin-block-start: var(--space-sm);
   }
 
   /* Hero decorative layers must not capture pointer events */

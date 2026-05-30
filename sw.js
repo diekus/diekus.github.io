@@ -1,4 +1,4 @@
-const CACHE_VERSION = 'diekus-v4';
+const CACHE_VERSION = 'diekus-v5';
 
 const SHELL = [
   '/',
@@ -15,6 +15,8 @@ const SHELL = [
   '/js/projects-page.js',
   '/js/gallery.js',
   '/js/gallery-teaser.js',
+  '/js/social.js',
+  '/css/social.css',
   '/projects.json',
   '/gallery.json',
   '/manifest.webmanifest',

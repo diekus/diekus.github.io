@@ -38,6 +38,8 @@ async function main() {
     iso: null,
     aperture: '',
     shutterSpeed: '',
+    camera: '',
+    focalLength: '',
     location: '',
   }));
 

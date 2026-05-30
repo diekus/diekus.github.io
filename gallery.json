@@ -5,6 +5,8 @@
     "iso": null,
     "aperture": "",
     "shutterSpeed": "",
+    "camera": "",
+    "focalLength": "",
     "location": "Lofoten, Norway"
   },
   {
@@ -13,14 +15,18 @@
     "iso": null,
     "aperture": "",
     "shutterSpeed": "",
+    "camera": "",
+    "focalLength": "",
     "location": "Athens, Greece"
   },
   {
     "filename": "astorgaFog25.jpg",
-    "description": "A foggy morning in Astorga, as I traced down my great-grandfather's records in Navarra, Spain.",
+    "description": "A foggy morning in Astorga, as I traced down my great-grandfather's records in Castilla y León, Spain.",
     "iso": null,
     "aperture": "",
     "shutterSpeed": "",
+    "camera": "",
+    "focalLength": "",
     "location": "Astorga, Spain"
   },
   {
@@ -29,6 +35,7 @@
     "iso": null,
     "aperture": "",
     "shutterSpeed": "",
+    "camera": "Fujifilm X-T5",
     "location": "Stockwell, UK"
   },
   {
@@ -37,6 +44,8 @@
     "iso": null,
     "aperture": "",
     "shutterSpeed": "",
+    "camera": "",
+    "focalLength": "",
     "location": "Cartagena, Colombia"
   },
   {
@@ -45,6 +54,8 @@
     "iso": null,
     "aperture": "",
     "shutterSpeed": "",
+    "camera": "",
+    "focalLength": "",
     "location": "Laco di Como, Italy"
   },
   {
@@ -53,6 +64,8 @@
     "iso": null,
     "aperture": "",
     "shutterSpeed": "",
+    "camera": "",
+    "focalLength": "",
     "location": "Abu Dhabi, UAB"
   },
   {
@@ -61,6 +74,8 @@
     "iso": null,
     "aperture": "",
     "shutterSpeed": "",
+    "camera": "",
+    "focalLength": "",
     "location": "Barcelona, Spain"
   },
   {
@@ -69,6 +84,7 @@
     "iso": null,
     "aperture": "",
     "shutterSpeed": "",
+    "camera": "DJI Mini 5 Pro",
     "location": "Saint Jean d'Aulps, France"
   },
   {
@@ -77,6 +93,8 @@
     "iso": null,
     "aperture": "",
     "shutterSpeed": "",
+    "camera": "",
+    "focalLength": "",
     "location": "Venice Beach, USA"
   }
 ]
