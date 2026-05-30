@@ -1,17 +1,22 @@
-const CACHE_VERSION = 'diekus-v3';
+const CACHE_VERSION = 'diekus-v4';
 
 const SHELL = [
   '/',
   '/index.html',
   '/projects.html',
+  '/gallery.html',
   '/offline.html',
   '/css/styles.css',
+  '/css/gallery.css',
   '/js/canvas.js',
   '/js/theme.js',
   '/js/projects.js',
   '/js/projects-home.js',
   '/js/projects-page.js',
+  '/js/gallery.js',
+  '/js/gallery-teaser.js',
   '/projects.json',
+  '/gallery.json',
   '/manifest.webmanifest',
   '/icons/favicon.png',
   '/icons/icon-192.png',

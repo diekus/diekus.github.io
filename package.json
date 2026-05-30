@@ -1,0 +1,8 @@
+{
+  "name": "diekus-ai",
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "gallery": "node scripts/sync-gallery.js"
+  }
+}

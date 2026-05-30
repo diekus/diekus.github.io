@@ -27,6 +27,7 @@
 
       <nav class="page-nav" aria-label="Page sections">
         <a href="#projects" class="nav-link">Projects</a>
+        <a href="gallery.html" class="nav-link">Gallery</a>
       </nav>
 
       <nav class="social-nav" aria-label="Social links">
@@ -101,6 +102,7 @@
             Spends his days tinkering with open-source AI and web technologies, and the past decade
             contributing new capabilities to web apps, foldables, and XR at Microsoft and Samsung.
           </p>
+          <a href="gallery.html" class="hero-gallery-link">View gallery →</a>
         </div>
       </div>
     </section>
@@ -110,6 +112,14 @@
         <h2 id="projects-heading" class="section-title">Projects &amp; Apps</h2>
         <div class="projects-grid"></div>
         <a href="projects.html" class="see-all-link">See all projects →</a>
+      </div>
+    </section>
+
+    <section id="gallery-teaser" class="gallery-teaser-section" aria-labelledby="gallery-teaser-heading">
+      <div class="section-inner">
+        <h2 id="gallery-teaser-heading" class="section-title">Photography</h2>
+        <div class="gallery-teaser-grid"></div>
+        <a href="gallery.html" class="see-all-link">See all photos →</a>
       </div>
     </section>
   </main>
@@ -122,6 +132,7 @@
   <script type="module" src="js/canvas.js"></script>
   <script type="module" src="js/hero.js"></script>
   <script type="module" src="js/projects-home.js"></script>
+  <script type="module" src="js/gallery-teaser.js"></script>
   <script>
     document.addEventListener('DOMContentLoaded', () => {
       if ('serviceWorker' in navigator) {
