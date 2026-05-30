@@ -1,0 +1,16 @@
+[
+  {
+    "title": "bubble",
+    "description": "Web based equirectangular image viewer.",
+    "link": "https://diek.us/bubble",
+    "tags": ["XR", "app", "media"],
+    "featured": true
+  },
+  {
+    "title": "pwinter",
+    "description": "Demo app for advanced web capabilities.",
+    "link": "https://diek.us/pwinter",
+    "tags": ["demo", "PWA", "app"],
+    "featured": true
+  }
+]

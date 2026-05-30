@@ -4,13 +4,13 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="application-name" content="diekus">
-  <meta name="description" content="Diego González — Web Platform Engineer, photographer, and human.">
+  <meta name="description" content="Projects and apps built by Diego González — Web Platform Engineer.">
   <meta name="color-scheme" content="light dark">
   <link rel="manifest" href="manifest.webmanifest">
   <link rel="icon" href="icons/favicon.png" type="image/png">
   <link rel="apple-touch-icon" href="icons/icon-192.png">
   <link rel="stylesheet" href="css/styles.css">
-  <title>Diego González · diekus</title>
+  <title>Projects · diekus</title>
 </head>
 <body>
   <!-- Particle canvas — fixed behind all content -->
@@ -26,7 +26,7 @@
       <a href="/" class="site-name" aria-label="diekus — home">diek.us</a>
 
       <nav class="page-nav" aria-label="Page sections">
-        <a href="#projects" class="nav-link">Projects</a>
+        <a href="projects.html" class="nav-link" aria-current="page">Projects</a>
       </nav>
 
       <nav class="social-nav" aria-label="Social links">
@@ -53,7 +53,6 @@
       </nav>
 
       <button id="theme-toggle" class="theme-toggle" aria-label="Toggle colour theme" type="button">
-        <!-- Sun: shown when in dark mode (click → switch to light) -->
         <svg id="icon-sun" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
           <circle cx="12" cy="12" r="5"/>
           <line x1="12" y1="1" x2="12" y2="3"/>
@@ -65,7 +64,6 @@
           <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/>
           <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
         </svg>
-        <!-- Moon: shown when in light mode (click → switch to dark) -->
         <svg id="icon-moon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
           <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
         </svg>
@@ -74,42 +72,11 @@
   </header>
 
   <main>
-    <section class="hero" aria-label="Introduction">
-      <div class="hero-backdrop" aria-hidden="true">
-        <picture>
-          <source type="image/webp">
-          <img src="" alt="" class="hero-bg-img" sizes="100vw">
-        </picture>
-      </div>
-      <div class="hero-overlay" aria-hidden="true"></div>
-      <div class="hero-content">
-        <div class="hero-portrait-wrap">
-          <img
-            src="images/diekus.jpg"
-            alt="Diego González"
-            class="portrait"
-            width="160"
-            height="160"
-            loading="eager"
-          >
-        </div>
-        <div class="hero-text">
-          <h1 class="hero-name">Diego González</h1>
-          <p class="hero-tagline">Web Platform Engineer · Photographer · Human</p>
-          <p class="hero-bio">
-            British-Costa Rican engineer based in London. Enjoys photography, skiing, and gadgets.
-            Spends his days tinkering with open-source AI and web technologies, and the past decade
-            contributing new capabilities to web apps, foldables, and XR at Microsoft and Samsung.
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <section id="projects" class="projects-section" aria-labelledby="projects-heading">
+    <section id="all-projects" class="projects-section" aria-labelledby="all-projects-heading">
       <div class="section-inner">
-        <h2 id="projects-heading" class="section-title">Projects &amp; Apps</h2>
+        <h1 id="all-projects-heading" class="section-title">Projects &amp; Apps</h1>
+        <div class="tag-filters" role="group" aria-label="Filter by tag"></div>
         <div class="projects-grid"></div>
-        <a href="projects.html" class="see-all-link">See all projects →</a>
       </div>
     </section>
   </main>
@@ -120,8 +87,7 @@
 
   <script type="module" src="js/theme.js"></script>
   <script type="module" src="js/canvas.js"></script>
-  <script type="module" src="js/hero.js"></script>
-  <script type="module" src="js/projects-home.js"></script>
+  <script type="module" src="js/projects-page.js"></script>
   <script>
     document.addEventListener('DOMContentLoaded', () => {
       if ('serviceWorker' in navigator) {
