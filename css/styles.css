@@ -1,0 +1,418 @@
+/* ============================================================
+   Layers declaration — order determines cascade priority
+   ============================================================ */
+@layer reset, base, theme, layout, components;
+
+/* ============================================================
+   Reset
+   ============================================================ */
+@layer reset {
+  *, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  img, svg {
+    display: block;
+    max-inline-size: 100%;
+  }
+
+  button {
+    cursor: pointer;
+    background: none;
+    border: none;
+    font: inherit;
+    color: inherit;
+  }
+
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+}
+
+/* ============================================================
+   Theme — CSS custom properties
+   ============================================================ */
+@layer theme {
+  :root {
+    color-scheme: light dark;
+
+    /* ── Palette — amber bg / red accent / dark-gray + white text ─────────── */
+    /* Light: amber dominates; red as accent, white lines on canvas            */
+    --color-bg:           #ffbb00;   /* amber/yellow                           */
+    --color-surface:      #e6a800;   /* deeper amber — hover pills             */
+    --color-surface-2:    #cc9500;
+    --color-text:         #3d3d3d;   /* dark gray — 6.51:1 on amber ✓          */
+    --color-text-muted:   #3d2000;   /* dark amber — 9.19:1 on amber ✓         */
+    --color-accent:       #F71342;   /* red — canvas dots, portrait ring       */
+    --color-accent-hover: #c8002e;
+    --color-accent-2:     #ffffff;   /* white — canvas lines                   */
+    --color-border:       #cc9500;   /* deep amber border                      */
+
+    /* Spacing tokens */
+    --space-xs:  clamp(0.25rem, 1vw, 0.5rem);
+    --space-sm:  clamp(0.5rem,  2vw, 0.75rem);
+    --space-md:  clamp(0.75rem, 3vw, 1.25rem);
+    --space-lg:  clamp(1.25rem, 4vw, 2rem);
+    --space-xl:  clamp(2rem,    6vw, 4rem);
+    --space-2xl: clamp(3rem,    8vw, 6rem);
+
+    /* Type scale */
+    --text-sm:   clamp(0.8rem,  1.5vw, 0.9rem);
+    --text-base: clamp(1rem,    2vw,   1.0625rem);
+    --text-lg:   clamp(1.125rem, 2.5vw, 1.25rem);
+    --text-xl:   clamp(1.5rem,  4vw,   2.25rem);
+    --text-2xl:  clamp(2rem,    6vw,   3.5rem);
+
+    /* Radii */
+    --radius-sm:   0.25rem;
+    --radius-md:   0.5rem;
+    --radius-full: 9999px;
+
+    /* WCO title bar — defaults to 0 outside installed PWA */
+    --titlebar-height: env(titlebar-area-height, 0px);
+    --titlebar-x:      env(titlebar-area-x, 0px);
+    --titlebar-y:      env(titlebar-area-y, 0px);
+    --titlebar-width:  env(titlebar-area-width, 100%);
+  }
+
+  /* Dark: charcoal bg; red accent, orange canvas lines                       */
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --color-bg:           #3d3d3d;   /* dark gray (same value as light text) */
+      --color-surface:      #4a4a4a;
+      --color-surface-2:    #575757;
+      --color-text:         #ffffff;   /* white — 10.9:1 on charcoal ✓         */
+      --color-text-muted:   #c8c8c8;   /* light gray — 6.65:1 on charcoal ✓   */
+      --color-accent:       #F71342;   /* red — decorative on dark             */
+      --color-accent-hover: #ff4060;
+      --color-accent-2:     #ffbb00;   /* amber — canvas lines, warm callback  */
+      --color-border:       #555555;
+    }
+  }
+
+  /* Manual overrides — beat the media query via [data-theme] specificity */
+  [data-theme="light"] {
+    --color-bg:           #ffbb00;
+    --color-surface:      #e6a800;
+    --color-surface-2:    #cc9500;
+    --color-text:         #3d3d3d;
+    --color-text-muted:   #3d2000;
+    --color-accent:       #F71342;
+    --color-accent-hover: #c8002e;
+    --color-accent-2:     #ffffff;
+    --color-border:       #cc9500;
+  }
+
+  [data-theme="dark"] {
+    --color-bg:           #3d3d3d;
+    --color-surface:      #4a4a4a;
+    --color-surface-2:    #575757;
+    --color-text:         #ffffff;
+    --color-text-muted:   #c8c8c8;
+    --color-accent:       #F71342;
+    --color-accent-hover: #ff4060;
+    --color-accent-2:     #F79813;
+    --color-border:       #555555;
+  }
+
+  /* Theme toggle icon visibility — CSS-only, no JS needed for first paint */
+  #icon-sun  { display: none; }
+  #icon-moon { display: block; }
+
+  @media (prefers-color-scheme: dark) {
+    #icon-sun  { display: block; }
+    #icon-moon { display: none; }
+  }
+
+  [data-theme="light"] #icon-sun  { display: none; }
+  [data-theme="light"] #icon-moon { display: block; }
+  [data-theme="dark"]  #icon-sun  { display: block; }
+  [data-theme="dark"]  #icon-moon { display: none; }
+}
+
+/* ============================================================
+   Base
+   ============================================================ */
+@layer base {
+  html {
+    font-size: 100%;
+    scroll-behavior: smooth;
+  }
+
+  body {
+    font-family: system-ui, -apple-system, "Segoe UI", Helvetica, Arial, sans-serif;
+    font-size: var(--text-base);
+    line-height: 1.6;
+    background-color: var(--color-bg);
+    color: var(--color-text);
+    /* Shift body down when WCO title bar is present */
+    padding-block-start: var(--titlebar-height);
+    transition:
+      background-color 0.25s ease,
+      color 0.25s ease;
+  }
+
+  :focus-visible {
+    /* --color-text always passes 4.5:1 on both bg colours */
+    outline: 2px solid var(--color-text);
+    outline-offset: 3px;
+    border-radius: var(--radius-sm);
+  }
+}
+
+/* ============================================================
+   Layout
+   ============================================================ */
+@layer layout {
+  /* Particle canvas — fixed, behind everything */
+  #bg-canvas {
+    position: fixed;
+    inset: 0;
+    inline-size: 100%;
+    block-size: 100%;
+    z-index: 0;
+    pointer-events: none; /* allow clicks to pass through to page */
+  }
+
+  /* WCO title bar area */
+  .title-bar-area {
+    position: fixed;
+    inset-block-start: var(--titlebar-y);
+    inset-inline-start: var(--titlebar-x);
+    inline-size: var(--titlebar-width);
+    block-size: var(--titlebar-height);
+    z-index: 1000;
+    /* Allow dragging the title bar to move the app window */
+    -webkit-app-region: drag;
+    app-region: drag;
+    display: flex;
+    align-items: center;
+    padding-inline: var(--space-md);
+    overflow: hidden;
+  }
+
+  .title-bar-name {
+    font-size: var(--text-sm);
+    font-weight: 600;
+    color: var(--color-text);
+    opacity: 0.7;
+    /* Prevent the text from being accidentally dragged */
+    -webkit-app-region: no-drag;
+    app-region: no-drag;
+    pointer-events: none;
+    user-select: none;
+  }
+
+  .site-header {
+    position: relative;
+    z-index: 10;
+    background-color: color-mix(in srgb, var(--color-bg) 30%, transparent);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border-block-end: 1px solid var(--color-border);
+  }
+
+  .header-inner {
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+    max-inline-size: 72rem;
+    margin-inline: auto;
+    padding-inline: var(--space-lg);
+    padding-block: var(--space-md);
+  }
+
+  main {
+    position: relative;
+    z-index: 1;
+  }
+
+  .site-footer {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    padding-block: var(--space-xl);
+    padding-inline: var(--space-lg);
+    color: var(--color-text-muted);
+    font-size: var(--text-sm);
+    border-block-start: 1px solid var(--color-border);
+  }
+}
+
+/* ============================================================
+   Components
+   ============================================================ */
+@layer components {
+  /* ── Site name ─────────────────────────────────────── */
+  .site-name {
+    font-weight: 700;
+    font-size: var(--text-lg);
+    letter-spacing: -0.02em;
+    /* --color-text: 6.51:1 on amber (light) and 10.9:1 on charcoal (dark) ✓ */
+    color: var(--color-text);
+    margin-inline-end: auto;
+    transition: color 0.2s ease;
+  }
+
+  .site-name:hover {
+    color: var(--color-text-muted);
+  }
+
+  /* ── Social nav ────────────────────────────────────── */
+  .social-nav {
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+    list-style: none;
+  }
+
+  .social-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    inline-size: 2rem;
+    block-size: 2rem;
+    border-radius: var(--radius-full);
+    color: var(--color-text-muted);
+    transition:
+      color 0.2s ease,
+      background-color 0.2s ease;
+  }
+
+  .social-link:hover {
+    color: var(--color-accent);
+    background-color: var(--color-surface);
+  }
+
+  /* ── Theme toggle ──────────────────────────────────── */
+  .theme-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    inline-size: 2rem;
+    block-size: 2rem;
+    border-radius: var(--radius-full);
+    color: var(--color-text-muted);
+    transition:
+      color 0.2s ease,
+      background-color 0.2s ease;
+  }
+
+  .theme-toggle:hover {
+    color: var(--color-accent);
+    background-color: var(--color-surface);
+  }
+
+  /* ── Hero ──────────────────────────────────────────── */
+  .hero {
+    container-type: inline-size;
+    position: relative;
+    min-block-size: 100svh;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+  }
+
+  .hero-backdrop {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+  }
+
+  .hero-bg-img {
+    inline-size: 100%;
+    block-size: 100%;
+    object-fit: cover;
+    object-position: center;
+    opacity: 0.3;
+  }
+
+  /* Warm gradient overlay so text stays readable over any photo */
+  .hero-overlay {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    background: linear-gradient(
+      to bottom,
+      color-mix(in srgb, var(--color-bg) 20%, transparent) 0%,
+      color-mix(in srgb, var(--color-bg) 60%, transparent) 50%,
+      color-mix(in srgb, var(--color-bg) 90%, transparent) 100%
+    );
+  }
+
+  .hero-content {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-lg);
+    max-inline-size: 72rem;
+    margin-inline: auto;
+    padding-inline: var(--space-lg);
+    padding-block: var(--space-2xl);
+    text-align: center;
+  }
+
+  /* Side-by-side layout at wider viewports */
+  @container (min-width: 42rem) {
+    .hero-content {
+      flex-direction: row;
+      text-align: start;
+      align-items: flex-start;
+    }
+  }
+
+  /* ── Portrait ──────────────────────────────────────── */
+  .hero-portrait-wrap {
+    flex-shrink: 0;
+  }
+
+  .portrait {
+    inline-size: clamp(7rem, 20vw, 10rem);
+    aspect-ratio: 1;
+    border-radius: var(--radius-full);
+    object-fit: cover;
+    border: 3px solid var(--color-accent);
+    box-shadow: 0 0 0 5px color-mix(in srgb, var(--color-accent) 20%, transparent);
+  }
+
+  /* ── Hero text ─────────────────────────────────────── */
+  .hero-text {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-sm);
+  }
+
+  .hero-name {
+    font-size: var(--text-2xl);
+    font-weight: 800;
+    letter-spacing: -0.03em;
+    line-height: 1.1;
+    color: var(--color-text);
+  }
+
+  .hero-tagline {
+    font-size: var(--text-lg);
+    /* --color-text-muted: 9.19:1 on amber (light) / 6.65:1 on charcoal (dark) ✓ */
+    color: var(--color-text-muted);
+    font-weight: 600;
+    letter-spacing: 0.01em;
+  }
+
+  .hero-bio {
+    font-size: var(--text-base);
+    color: var(--color-text-muted);
+    max-inline-size: 52ch;
+    line-height: 1.75;
+  }
+
+  /* Hero decorative layers must not capture pointer events */
+  .hero-backdrop,
+  .hero-overlay {
+    pointer-events: none;
+  }
+}

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="application-name" content="diekus">
+  <meta name="color-scheme" content="light dark">
+  <link rel="manifest" href="manifest.webmanifest">
+  <style>
+    :root {
+      --bg: #ffbb00;
+      --text: #3d3d3d;
+      --accent: #F71342;
+      --muted: #3d2000;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #3d3d3d;
+        --text: #ffffff;
+        --accent: #F71342;
+        --muted: #c8c8c8;
+      }
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: system-ui, -apple-system, sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+      min-block-size: 100dvh;
+      display: grid;
+      place-items: center;
+      padding: 2rem;
+    }
+    .offline-card {
+      text-align: center;
+      max-inline-size: 36ch;
+    }
+    .offline-mark {
+      font-size: clamp(3rem, 10vw, 5rem);
+      line-height: 1;
+      margin-block-end: 1rem;
+      color: var(--accent);
+    }
+    h1 {
+      font-size: clamp(1.25rem, 4vw, 1.75rem);
+      font-weight: 600;
+      margin-block-end: 0.5rem;
+    }
+    p {
+      color: var(--muted);
+      line-height: 1.6;
+      margin-block-end: 1.5rem;
+    }
+    a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+    a:hover { text-decoration: underline; }
+  </style>
+  <title>Offline · diekus</title>
+</head>
+<body>
+  <div class="offline-card">
+    <div class="offline-mark" aria-hidden="true">◈</div>
+    <h1>You're offline</h1>
+    <p>This page isn't cached yet. Connect to the internet and <a href="/">try again</a>.</p>
+  </div>
+</body>
+</html>

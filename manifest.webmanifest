@@ -1,0 +1,40 @@
+{
+  "name": "Diego González",
+  "short_name": "diekus",
+  "description": "Web Platform Engineer, photographer, and human.",
+  "start_url": "/",
+  "scope": "/",
+  "display_override": ["window-controls-overlay", "standalone"],
+  "display": "standalone",
+  "orientation": "any",
+  "background_color": "#3d3d3d",
+  "theme_color": [
+    {
+      "color": "#ffbb00",
+      "media": "(prefers-color-scheme: light)"
+    },
+    {
+      "color": "#3d3d3d",
+      "media": "(prefers-color-scheme: dark)"
+    }
+  ],
+  "icons": [
+    {
+      "src": "icons/favicon.png",
+      "sizes": "486x486",
+      "type": "image/png"
+    },
+    {
+      "src": "icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ],
+  "screenshots": []
+}
