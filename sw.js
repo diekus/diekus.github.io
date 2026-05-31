@@ -1,4 +1,4 @@
-const CACHE_VERSION = 'diekus-v6';
+const CACHE_VERSION = 'diekus-v7';
 
 const SHELL = [
   '/',
@@ -58,6 +58,23 @@ self.addEventListener('fetch', event => {
 
   // Only handle same-origin requests
   if (url.origin !== self.location.origin) return;
+
+  // Data files: network-first so content updates are visible immediately after
+  // running `npm run gallery` or editing projects.json, without a SW version bump.
+  if (url.pathname === '/gallery.json' || url.pathname === '/projects.json') {
+    event.respondWith(
+      fetch(request)
+        .then(response => {
+          if (response.ok) {
+            const clone = response.clone();
+            caches.open(CACHE_VERSION).then(cache => cache.put(request, clone));
+          }
+          return response;
+        })
+        .catch(() => caches.match(request))
+    );
+    return;
+  }
 
   if (request.mode === 'navigate') {
     // Navigation: network-first; fall back to cache then offline page

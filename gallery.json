@@ -1,72 +1,24 @@
 [
   {
-    "filename": "Alfa fjord.jpg",
+    "filename": "venicaSkate.jpg",
     "description": "",
     "iso": null,
     "aperture": "",
     "shutterSpeed": "",
     "camera": "",
     "focalLength": "",
-    "location": "Lofoten, Norway"
+    "location": "Venice Beach, USA",
+    "addedAt": "2026-05-30T18:36:19.173Z"
   },
   {
-    "filename": "acropolis24.jpg",
+    "filename": "sjdaChurch25.jpg",
     "description": "",
     "iso": null,
     "aperture": "",
     "shutterSpeed": "",
-    "camera": "",
-    "focalLength": "",
-    "location": "Athens, Greece"
-  },
-  {
-    "filename": "astorgaFog25.jpg",
-    "description": "A foggy morning in Astorga, as I traced down my great-grandfather's records in Castilla y León, Spain.",
-    "iso": null,
-    "aperture": "",
-    "shutterSpeed": "",
-    "camera": "",
-    "focalLength": "",
-    "location": "Astorga, Spain"
-  },
-  {
-    "filename": "busGarageStock0126.jpg",
-    "description": "The Stockwell bus garage has always fascinated me, and the idea of a picture just like this one, where lined parked buses at night stand out due to their colour was something I had to take.",
-    "iso": null,
-    "aperture": "",
-    "shutterSpeed": "",
-    "camera": "Fujifilm X-T5",
-    "location": "Stockwell, UK"
-  },
-  {
-    "filename": "cartagenaTorre.jpg",
-    "description": "",
-    "iso": null,
-    "aperture": "",
-    "shutterSpeed": "",
-    "camera": "",
-    "focalLength": "",
-    "location": "Cartagena, Colombia"
-  },
-  {
-    "filename": "colono241T.jpg",
-    "description": "",
-    "iso": null,
-    "aperture": "",
-    "shutterSpeed": "",
-    "camera": "",
-    "focalLength": "",
-    "location": "Laco di Como, Italy"
-  },
-  {
-    "filename": "granmosque2.jpg",
-    "description": "",
-    "iso": null,
-    "aperture": "",
-    "shutterSpeed": "",
-    "camera": "",
-    "focalLength": "",
-    "location": "Abu Dhabi, UAB"
+    "camera": "DJI Mini 5 Pro",
+    "location": "Saint Jean d'Aulps, France",
+    "addedAt": "2026-05-30T18:36:19.171Z"
   },
   {
     "filename": "sagradafamiliaangelday.jpg",
@@ -76,25 +28,83 @@
     "shutterSpeed": "",
     "camera": "",
     "focalLength": "",
-    "location": "Barcelona, Spain"
+    "location": "Barcelona, Spain",
+    "addedAt": "2026-05-30T18:36:19.167Z"
   },
   {
-    "filename": "sjdaChurch25.jpg",
-    "description": "",
-    "iso": null,
-    "aperture": "",
-    "shutterSpeed": "",
-    "camera": "DJI Mini 5 Pro",
-    "location": "Saint Jean d'Aulps, France"
-  },
-  {
-    "filename": "venicaSkate.jpg",
+    "filename": "granmosque2.jpg",
     "description": "",
     "iso": null,
     "aperture": "",
     "shutterSpeed": "",
     "camera": "",
     "focalLength": "",
-    "location": "Venice Beach, USA"
+    "location": "Abu Dhabi, UAB",
+    "addedAt": "2026-05-30T18:36:19.117Z"
+  },
+  {
+    "filename": "colono241T.jpg",
+    "description": "",
+    "iso": null,
+    "aperture": "",
+    "shutterSpeed": "",
+    "camera": "",
+    "focalLength": "",
+    "location": "Laco di Como, Italy",
+    "addedAt": "2026-05-30T18:36:19.114Z"
+  },
+  {
+    "filename": "cartagenaTorre.jpg",
+    "description": "",
+    "iso": null,
+    "aperture": "",
+    "shutterSpeed": "",
+    "camera": "",
+    "focalLength": "",
+    "location": "Cartagena, Colombia",
+    "addedAt": "2026-05-30T18:36:19.054Z"
+  },
+  {
+    "filename": "busGarageStock0126.jpg",
+    "description": "The Stockwell bus garage has always fascinated me, and the idea of a picture just like this one, where lined parked buses at night stand out due to their colour was something I had to take.",
+    "iso": null,
+    "aperture": "",
+    "shutterSpeed": "",
+    "camera": "Fujifilm X-T5",
+    "location": "Stockwell, UK",
+    "addedAt": "2026-05-30T18:36:19.042Z"
+  },
+  {
+    "filename": "astorgaFog25.jpg",
+    "description": "A foggy morning in Astorga, as I traced down my great-grandfather's records in Castilla y León, Spain.",
+    "iso": 125,
+    "aperture": "f/3.6",
+    "shutterSpeed": "1/125s",
+    "camera": "Fujifilm X-T5",
+    "focalLength": "27mm",
+    "location": "Astorga, Spain",
+    "addedAt": "2026-05-30T18:36:19.014Z"
+  },
+  {
+    "filename": "acropolis24.jpg",
+    "description": "",
+    "iso": null,
+    "aperture": "",
+    "shutterSpeed": "",
+    "camera": "",
+    "focalLength": "",
+    "location": "Athens, Greece",
+    "addedAt": "2026-05-30T18:36:19.005Z"
+  },
+  {
+    "filename": "Alfa fjord.jpg",
+    "description": "",
+    "iso": null,
+    "aperture": "",
+    "shutterSpeed": "",
+    "camera": "",
+    "focalLength": "",
+    "location": "Lofoten, Norway",
+    "addedAt": "2026-05-30T18:36:18.902Z"
   }
 ]
