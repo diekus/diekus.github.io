@@ -13,34 +13,40 @@
 }
 
 /* ── Gallery grid ────────────────────────────────────────── */
-/* Base: regular CSS grid — universal fallback */
+/* Base: uniform square grid — works in all browsers */
 .gallery-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(16rem, 1fr));
   gap: var(--space-md);
-  align-items: start; /* prevent image stretching in fixed row tracks */
-}
-
-/* Enhancement: CSS Grid Lanes (masonry) — CSS Grid Layout Level 3, Jan 2025 resolution.
-   Self-contained so cascade from the base rule doesn't bleed in unexpectedly.
-   align-items: normal resets the start override — in grid-lanes, alignment only
-   applies to items adjacent to a gap, not uniformly (W3C CSS Grid 3 spec). */
-@supports (display: grid-lanes) {
-  .gallery-grid {
-    display: grid-lanes;
-    grid-template-columns: repeat(auto-fill, minmax(16rem, 1fr));
-    gap: var(--space-md);
-    align-items: normal;
-  }
 }
 
 .gallery-item {
-  /* wrapper kept for JS convenience; no column-break properties needed in grid */
+  /* no special properties needed for square grid */
+}
+
+/* Enhancement: true masonry — natural image heights, no uniform rows */
+@supports (grid-template-rows: masonry) {
+  .gallery-grid {
+    grid-template-rows: masonry;
+  }
+
+  .gallery-thumb-btn { aspect-ratio: unset; }
+  .gallery-thumb-btn img { block-size: auto; object-fit: unset; }
+}
+
+@supports (display: grid-lanes) {
+  .gallery-grid {
+    display: grid-lanes;
+  }
+
+  .gallery-thumb-btn { aspect-ratio: unset; }
+  .gallery-thumb-btn img { block-size: auto; object-fit: unset; }
 }
 
 .gallery-thumb-btn {
   display: block;
   inline-size: 100%;
+  aspect-ratio: 1;
   padding: 0;
   border-radius: var(--radius-md);
   overflow: hidden;
@@ -56,7 +62,8 @@
 
 .gallery-thumb-btn img {
   inline-size: 100%;
-  block-size: auto;
+  block-size: 100%;
+  object-fit: cover;
   display: block;
   border-radius: var(--radius-md);
 }
@@ -94,8 +101,8 @@
 
 #lightbox::backdrop {
   background: color-mix(in srgb, #000 75%, transparent);
-  backdrop-filter: blur(4px);
   -webkit-backdrop-filter: blur(4px);
+  backdrop-filter: blur(4px);
 }
 
 /* ── Lightbox inner — side-by-side on wide viewports ─────── */
@@ -260,5 +267,5 @@
   .lightbox-nav,
   .lightbox-close { transition: none; }
 
-  #lightbox::backdrop { backdrop-filter: none; -webkit-backdrop-filter: none; }
+  #lightbox::backdrop { -webkit-backdrop-filter: none; backdrop-filter: none; }
 }
