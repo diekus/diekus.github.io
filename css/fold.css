@@ -1,0 +1,54 @@
+/* ── Foldable & Adaptive Layout ────────────────────────
+   Applies only when the device is in tabletop (half-fold)
+   posture with two horizontal viewport segments.
+   Imported by index.html, gallery.html, and projects.html.
+   ──────────────────────────────────────────────────── */
+
+@media (device-posture: folded) and (horizontal-viewport-segments: 2) {
+
+  /* Header is now at the bottom — no top padding needed */
+  body {
+    padding-block-start: 0;
+  }
+
+  /* Canvas clips to the top segment; the ResizeObserver in
+     canvas.js fires automatically and updates canvas.height */
+  #bg-canvas {
+    block-size: env(viewport-segment-height, 0, 0);
+  }
+
+  /* Main content fills the top segment and scrolls independently */
+  main {
+    block-size: env(viewport-segment-height, 0, 0);
+    overflow-y: auto;
+    overflow-x: hidden;
+  }
+
+  /* Footer is not useful in tabletop mode */
+  .site-footer {
+    display: none;
+  }
+
+  /* Header repositioned to the bottom segment as the nav strip */
+  .site-header {
+    position: fixed;
+    inset-block-start: env(viewport-segment-top, 1, 0);
+    inset-inline: 0;
+    block-size: env(viewport-segment-height, 1, 0);
+    background-color: var(--color-bg);
+    -webkit-backdrop-filter: none;
+    backdrop-filter: none;
+    border-block-end: none;
+    border-block-start: 1px solid var(--color-border);
+  }
+
+  /* Constrain gallery lightbox to the top segment.
+     #lightbox uses inset: 0 + margin: auto to centre itself in the viewport;
+     override to pin it to the top so it stays within the top segment. */
+  dialog {
+    inset-block-end: auto;
+    margin-block: 0;
+    max-block-size: env(viewport-segment-height, 0, 0);
+    block-size: env(viewport-segment-height, 0, 0);
+  }
+}
