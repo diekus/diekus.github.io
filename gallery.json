@@ -1,5 +1,38 @@
 [
   {
+    "filename": "Cdmxesqs.jpg",
+    "description": "Day of the dead parade in CDMX.",
+    "iso": 1000,
+    "aperture": "f/4.8",
+    "shutterSpeed": "1/300s",
+    "camera": "Fujifilm X-T5",
+    "focalLength": "200mm",
+    "location": "Ciudad de México, México",
+    "addedAt": "2026-06-01T16:38:04.033Z"
+  },
+  {
+    "filename": "plespanaBarranda.jpg",
+    "description": "5am photowalk in Pl. España with Patrick.",
+    "iso": 1250,
+    "aperture": "f/2.8",
+    "shutterSpeed": "1/125s",
+    "camera": "Fujifilm X-T5",
+    "focalLength": "8mm",
+    "location": "Sevilla, España",
+    "addedAt": "2026-06-01T16:38:04.033Z"
+  },
+  {
+    "filename": "tucanretrato.jpg",
+    "description": "My OG toucan portraiture.",
+    "iso": 3200,
+    "aperture": "f/11",
+    "shutterSpeed": "1/400s",
+    "camera": "Fujifilm X-T3",
+    "focalLength": "800mm",
+    "location": "Boca Tapada, Costa Rica",
+    "addedAt": "2026-06-01T16:38:04.033Z"
+  },
+  {
     "filename": "venicaSkate.jpg",
     "description": "",
     "iso": null,
@@ -39,7 +72,7 @@
     "shutterSpeed": "",
     "camera": "",
     "focalLength": "",
-    "location": "Abu Dhabi, UAB",
+    "location": "Abu Dhabi, UAE",
     "addedAt": "2026-05-30T18:36:19.117Z"
   },
   {
