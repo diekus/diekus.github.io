@@ -1,5 +1,16 @@
 [
   {
+    "filename": "penolpescador.jpg",
+    "description": "Un pescador con el Peñol de fondo.",
+    "iso": 400,
+    "aperture": "f/4",
+    "shutterSpeed": "1/1000s",
+    "camera": "Fujifilm X-T5",
+    "focalLength": "35.8mm",
+    "location": "Guatapé, Colombia",
+    "addedAt": "2026-06-02T10:24:42.148Z"
+  },
+  {
     "filename": "Montmartre25.jpg",
     "description": "Compressing Montmartre.",
     "iso": 125,
