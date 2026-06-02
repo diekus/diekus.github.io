@@ -13,14 +13,7 @@
 }
 
 /* ── Gallery grid ────────────────────────────────────────── */
-<<<<<<< Updated upstream
-/* Base: uniform square grid — works in all browsers */
-.gallery-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(16rem, 1fr));
-  gap: var(--space-md);
-=======
-/* Mobile: 3 equal columns — tight gap so thumbnails don't crowd */
+/* Mobile: 3 equal columns of square thumbnails */
 .gallery-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -36,50 +29,11 @@
   }
 }
 
-/* Enhancement: CSS Grid Lanes (masonry) — CSS Grid Layout Level 3, Jan 2025 resolution.
-   Self-contained so cascade from the base rule doesn't bleed in unexpectedly.
-   align-items: normal resets the start override — in grid-lanes, alignment only
-   applies to items adjacent to a gap, not uniformly (W3C CSS Grid 3 spec). */
-@supports (display: grid-lanes) {
-  .gallery-grid {
-    display: grid-lanes;
-    grid-template-columns: repeat(3, 1fr);
-    gap: var(--space-xs);
-    align-items: normal;
-  }
-
-  @media (min-width: 40rem) {
-    .gallery-grid {
-      grid-template-columns: repeat(auto-fill, minmax(16rem, 1fr));
-      gap: var(--space-md);
-    }
-  }
->>>>>>> Stashed changes
-}
-
 .gallery-item {
-  /* no special properties needed for square grid */
+  /* wrapper kept for JS convenience */
 }
 
-/* Enhancement: true masonry — natural image heights, no uniform rows */
-@supports (grid-template-rows: masonry) {
-  .gallery-grid {
-    grid-template-rows: masonry;
-  }
-
-  .gallery-thumb-btn { aspect-ratio: unset; }
-  .gallery-thumb-btn img { block-size: auto; object-fit: unset; }
-}
-
-@supports (display: grid-lanes) {
-  .gallery-grid {
-    display: grid-lanes;
-  }
-
-  .gallery-thumb-btn { aspect-ratio: unset; }
-  .gallery-thumb-btn img { block-size: auto; object-fit: unset; }
-}
-
+/* Base thumbnail — square crop, works in all browsers */
 .gallery-thumb-btn {
   display: block;
   inline-size: 100%;
@@ -103,6 +57,34 @@
   object-fit: cover;
   display: block;
   border-radius: var(--radius-md);
+}
+
+/* Masonry enhancements — must come AFTER the base rules above so they win the cascade.
+   Both blocks unset aspect-ratio so photos display at their natural height. */
+
+/* Firefox prototype syntax */
+@supports (grid-template-rows: masonry) {
+  .gallery-grid {
+    grid-template-rows: masonry;
+  }
+
+  .gallery-thumb-btn { aspect-ratio: unset; }
+  .gallery-thumb-btn img { block-size: auto; object-fit: unset; }
+}
+
+/* CSS Grid Lanes — CSS Grid Layout Level 3, Jan 2025 resolution.
+   Always auto-fill on all viewports; the square 3-column grid is the
+   fallback for browsers that don't support masonry. */
+@supports (display: grid-lanes) {
+  .gallery-grid {
+    display: grid-lanes;
+    grid-template-columns: repeat(auto-fill, minmax(16rem, 1fr));
+    gap: var(--space-md);
+    align-items: normal;
+  }
+
+  .gallery-thumb-btn { aspect-ratio: unset; }
+  .gallery-thumb-btn img { block-size: auto; object-fit: unset; }
 }
 
 .gallery-empty {
@@ -132,7 +114,9 @@
   color: var(--color-text);
   max-inline-size: min(95vw, 72rem);
   inline-size: min(95vw, 72rem);
-  overflow: hidden;
+  /* Mobile: dialog scrolls so metadata below the photo is reachable */
+  max-block-size: 92vh;
+  overflow-y: auto;
   box-shadow: 0 24px 80px color-mix(in srgb, #000 60%, transparent);
 }
 
@@ -151,6 +135,7 @@
 @media (min-width: 56rem) {
   #lightbox {
     block-size: min(90vh, 48rem);
+    overflow: hidden; /* fixed-height side-by-side — inner meta panel scrolls */
   }
 
   .lightbox-inner {
