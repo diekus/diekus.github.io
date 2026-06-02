@@ -1,5 +1,38 @@
 [
   {
+    "filename": "kobewalk25.jpg",
+    "description": "Kobe exposures.",
+    "iso": 125,
+    "aperture": "f/11",
+    "shutterSpeed": "1/8s",
+    "camera": "Fujifilm X-T5",
+    "focalLength": "27mm",
+    "location": "Kobe, Japan.",
+    "addedAt": "2026-06-02T10:59:51.525Z"
+  },
+  {
+    "filename": "AlfredoWestminster.jpg",
+    "description": "Alfredo helping with some long exposures at Westminster.",
+    "iso": 125,
+    "aperture": "f/10",
+    "shutterSpeed": "1/15s",
+    "camera": "Fujifilm X-T5",
+    "focalLength": "27mm",
+    "location": "London, UK",
+    "addedAt": "2026-06-02T10:54:19.800Z"
+  },
+  {
+    "filename": "Duvvent.jpg",
+    "description": "Duvrobnik as a postcard.",
+    "iso": 160,
+    "aperture": "f/2.8",
+    "shutterSpeed": "1/1400s",
+    "camera": "Fujifilm X-T30",
+    "focalLength": "18mm",
+    "location": "Dubrovnik, Croatia",
+    "addedAt": "2026-06-02T10:51:59.738Z"
+  },
+  {
     "filename": "penolpescador.jpg",
     "description": "Un pescador con el Peñol de fondo.",
     "iso": 400,
