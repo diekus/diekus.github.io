@@ -13,11 +13,48 @@
 }
 
 /* ── Gallery grid ────────────────────────────────────────── */
+<<<<<<< Updated upstream
 /* Base: uniform square grid — works in all browsers */
 .gallery-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(16rem, 1fr));
   gap: var(--space-md);
+=======
+/* Mobile: 3 equal columns — tight gap so thumbnails don't crowd */
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-xs);
+  align-items: start;
+}
+
+/* Wider screens: auto-fill with a minimum column width */
+@media (min-width: 40rem) {
+  .gallery-grid {
+    grid-template-columns: repeat(auto-fill, minmax(16rem, 1fr));
+    gap: var(--space-md);
+  }
+}
+
+/* Enhancement: CSS Grid Lanes (masonry) — CSS Grid Layout Level 3, Jan 2025 resolution.
+   Self-contained so cascade from the base rule doesn't bleed in unexpectedly.
+   align-items: normal resets the start override — in grid-lanes, alignment only
+   applies to items adjacent to a gap, not uniformly (W3C CSS Grid 3 spec). */
+@supports (display: grid-lanes) {
+  .gallery-grid {
+    display: grid-lanes;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-xs);
+    align-items: normal;
+  }
+
+  @media (min-width: 40rem) {
+    .gallery-grid {
+      grid-template-columns: repeat(auto-fill, minmax(16rem, 1fr));
+      gap: var(--space-md);
+    }
+  }
+>>>>>>> Stashed changes
 }
 
 .gallery-item {
