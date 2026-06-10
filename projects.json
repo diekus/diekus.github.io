@@ -4,7 +4,7 @@
     "description": "Web based equirectangular image viewer.",
     "link": "https://diek.us/bubble",
     "tags": ["XR", "app", "media"],
-    "thumbnail": "./images/projects/tn_bubble.png",
+    "thumbnail": "./images/projects/tn-bubble.png",
     "featured": true
   },
   {
@@ -12,7 +12,7 @@
     "description": "Demo app for advanced web capabilities.",
     "link": "https://diek.us/pwinter",
     "tags": ["PWA", "app"],
-    "thumbnail": "./images/projects/tn_pwinter.png",
+    "thumbnail": "./images/projects/tn-pwinter.png",
     "featured": true
   },
   {
@@ -20,7 +20,7 @@
     "description": "Tidbyt lost their weather app, so here's a replacement one.",
     "link": "https://github.com/diekus/tbWeather/tree/main",
     "tags": ["tidbyt"],
-    "thumbnail": "./images/projects/tn_tidbytweather.jpg",
+    "thumbnail": "./images/projects/tn-tidbytweather.jpg",
     "featured": true
   }
 ]
