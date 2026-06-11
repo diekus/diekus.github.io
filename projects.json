@@ -19,7 +19,7 @@
     "title": "Tidbyt Weather App",
     "description": "Tidbyt lost their weather app, so here's a replacement one.",
     "link": "https://github.com/diekus/tbWeather/tree/main",
-    "tags": ["tidbyt"],
+    "tags": ["tidbyt", "AI"],
     "thumbnail": "./images/projects/tn-tidbytweather.jpg",
     "featured": true
   }
