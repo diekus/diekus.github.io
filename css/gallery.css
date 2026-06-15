@@ -83,10 +83,16 @@
 @supports (display: grid-lanes) {
   .gallery-grid {
     display: grid-lanes;
-    grid-template-columns: repeat(auto-fill, minmax(16rem, 1fr));
+    grid-template-columns: repeat(2, 1fr);
     grid-template-rows: initial;
     gap: var(--space-md);
     align-items: normal;
+  }
+
+  @media (min-width: 40rem) {
+    .gallery-grid {
+      grid-template-columns: repeat(auto-fill, minmax(16rem, 1fr));
+    }
   }
 }
 
