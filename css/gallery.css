@@ -13,7 +13,7 @@
 }
 
 /* ── Gallery grid ────────────────────────────────────────── */
-/* Mobile: 3 equal columns of square thumbnails */
+/* Mobile: 3 equal columns */
 .gallery-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -33,11 +33,10 @@
   /* wrapper kept for JS convenience */
 }
 
-/* Base thumbnail — square crop, works in all browsers */
+/* Base thumbnail — natural aspect ratio; images fill column width */
 .gallery-thumb-btn {
   display: block;
   inline-size: 100%;
-  aspect-ratio: 1;
   padding: 0;
   border-radius: var(--radius-md);
   overflow: hidden;
@@ -53,38 +52,42 @@
 
 .gallery-thumb-btn img {
   inline-size: 100%;
-  block-size: 100%;
-  object-fit: cover;
+  block-size: auto;
   display: block;
   border-radius: var(--radius-md);
 }
 
-/* Masonry enhancements — must come AFTER the base rules above so they win the cascade.
-   Both blocks unset aspect-ratio so photos display at their natural height. */
+/* Square thumbnails — only for browsers without display: grid-lanes support */
+@supports not (display: grid-lanes) {
+  .gallery-thumb-btn {
+    aspect-ratio: 1;
+  }
 
-/* Firefox prototype syntax */
+  .gallery-thumb-btn img {
+    block-size: 100%;
+    object-fit: cover;
+  }
+}
+
+/* Firefox masonry prototype syntax */
 @supports (grid-template-rows: masonry) {
   .gallery-grid {
     grid-template-rows: masonry;
   }
-
-  .gallery-thumb-btn { aspect-ratio: unset; }
-  .gallery-thumb-btn img { block-size: auto; object-fit: unset; }
 }
 
-/* CSS Grid Lanes — CSS Grid Layout Level 3, Jan 2025 resolution.
-   Always auto-fill on all viewports; the square 3-column grid is the
-   fallback for browsers that don't support masonry. */
+/* CSS Grid Layout Level 3 masonry — resolved syntax (Jan 2025).
+   display: grid-lanes defines columns as the strict grid axis; rows become
+   the masonry axis automatically. grid-template-rows is reset to initial so
+   the masonry-rows value from the prototype block above cannot bleed in. */
 @supports (display: grid-lanes) {
   .gallery-grid {
     display: grid-lanes;
     grid-template-columns: repeat(auto-fill, minmax(16rem, 1fr));
+    grid-template-rows: initial;
     gap: var(--space-md);
     align-items: normal;
   }
-
-  .gallery-thumb-btn { aspect-ratio: unset; }
-  .gallery-thumb-btn img { block-size: auto; object-fit: unset; }
 }
 
 .gallery-empty {
