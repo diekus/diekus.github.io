@@ -1,9 +1,17 @@
 [
   {
+    "title": "Chemins du Soleil",
+    "description": "A guide to finding your way in the Portes du Soleil ski resort.",
+    "link": "https://github.com/diekus/chemins-du-soleil",
+    "tags": ["ski", "app", "coded w/ AI", "web"],
+    "thumbnail": "./images/projects/tn-cheminsdusoleil.png",
+    "featured": true
+  },
+  {
     "title": "bubble",
     "description": "Web based equirectangular image viewer.",
     "link": "https://diek.us/bubble",
-    "tags": ["XR", "app", "media"],
+    "tags": ["XR", "app", "web"],
     "thumbnail": "./images/projects/tn-bubble.png",
     "featured": true
   },
@@ -11,7 +19,7 @@
     "title": "pwinter",
     "description": "Demo app for advanced web capabilities.",
     "link": "https://diek.us/pwinter",
-    "tags": ["PWA", "app"],
+    "tags": ["app", "web"],
     "thumbnail": "./images/projects/tn-pwinter.png",
     "featured": true
   },
@@ -19,8 +27,8 @@
     "title": "Tidbyt Weather App",
     "description": "Tidbyt lost their weather app, so here's a replacement one.",
     "link": "https://github.com/diekus/tbWeather/tree/main",
-    "tags": ["tidbyt", "AI"],
-    "thumbnail": "./images/projects/tn-tidbytweather.jpg",
+    "tags": ["tidbyt", "coded w/ AI"],
+    "thumbnail": "./images/projects/tn-tidbytweather.png",
     "featured": true
   }
 ]
