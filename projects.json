@@ -2,7 +2,7 @@
   {
     "title": "Chemins du Soleil",
     "description": "A guide to finding your way in the Portes du Soleil ski resort.",
-    "link": "https://github.com/diekus/chemins-du-soleil",
+    "link": "https://diek.us/chemins-du-soleil/",
     "tags": ["ski", "app", "coded w/ AI", "web"],
     "thumbnail": "./images/projects/tn-cheminsdusoleil.png",
     "featured": true
