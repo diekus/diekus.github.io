@@ -8,6 +8,14 @@
     "featured": true
   },
   {
+    "title": "kaid",
+    "description": "An AI cohort — coming soon.",
+    "link": "#",
+    "tags": ["AI", "cohort", "training"],
+    "thumbnail": "./images/projects/tn-kaid.png",
+    "featured": true
+  },
+  {
     "title": "bubble",
     "description": "Web based equirectangular image viewer.",
     "link": "https://diek.us/bubble",
