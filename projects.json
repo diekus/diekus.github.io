@@ -1,5 +1,13 @@
 [
   {
+    "title": "Golden Hour",
+    "description": "A utility to calculate golden and blue hour for photography.",
+    "link": "https://diek.us/golden-hour/",
+    "tags": ["photography", "app", "coded w/ AI", "web"],
+    "thumbnail": "./images/projects/tn-goldenhour.png",
+    "featured": true
+  },
+  {
     "title": "Chemins du Soleil",
     "description": "A guide to finding your way in the Portes du Soleil ski resort.",
     "link": "https://diek.us/chemins-du-soleil/",
@@ -13,7 +21,7 @@
     "link": "#",
     "tags": ["AI", "cohort", "training"],
     "thumbnail": "./images/projects/tn-kaid.png",
-    "featured": true
+    "featured": false
   },
   {
     "title": "bubble",
