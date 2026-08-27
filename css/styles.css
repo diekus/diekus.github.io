@@ -322,19 +322,6 @@
     }
   }
 
-  /* Warm gradient tint behind the hero text */
-  .hero-overlay {
-    position: absolute;
-    inset: 0;
-    z-index: 1;
-    background: linear-gradient(
-      to bottom,
-      color-mix(in srgb, var(--color-bg) 20%, transparent) 0%,
-      color-mix(in srgb, var(--color-bg) 60%, transparent) 50%,
-      color-mix(in srgb, var(--color-bg) 90%, transparent) 100%
-    );
-  }
-
   .hero-content {
     position: relative;
     z-index: 2;
@@ -409,11 +396,6 @@
     color: var(--color-text-muted);
     line-height: 1.75;
     margin-block-start: var(--space-sm);
-  }
-
-  /* Hero decorative layer must not capture pointer events */
-  .hero-overlay {
-    pointer-events: none;
   }
 
   /* ── Page nav (header section links) ─────────── */
