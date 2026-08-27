@@ -1,4 +1,4 @@
-const CACHE_VERSION = 'diekus-v7';
+const CACHE_VERSION = 'diekus-v8';
 
 const SHELL = [
   '/',
@@ -26,7 +26,6 @@ const SHELL = [
   '/icons/icon-192.png',
   '/icons/icon-512.png',
   '/images/diekus.jpg',
-  '/images/hero/manifest.json',
 ];
 
 // ── Install — cache the shell ──────────────────────────────────────────────

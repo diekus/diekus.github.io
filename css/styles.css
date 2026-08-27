@@ -322,21 +322,7 @@
     }
   }
 
-  .hero-backdrop {
-    position: absolute;
-    inset: 0;
-    z-index: 0;
-  }
-
-  .hero-bg-img {
-    inline-size: 100%;
-    block-size: 100%;
-    object-fit: cover;
-    object-position: center;
-    opacity: 0.3;
-  }
-
-  /* Warm gradient overlay so text stays readable over any photo */
+  /* Warm gradient tint behind the hero text */
   .hero-overlay {
     position: absolute;
     inset: 0;
@@ -425,8 +411,7 @@
     margin-block-start: var(--space-sm);
   }
 
-  /* Hero decorative layers must not capture pointer events */
-  .hero-backdrop,
+  /* Hero decorative layer must not capture pointer events */
   .hero-overlay {
     pointer-events: none;
   }
