@@ -457,6 +457,15 @@
     gap: var(--space-md);
   }
 
+  /* Grid Lanes: cards pack into the shortest running column instead of
+     stretching to a shared row height. Progressive enhancement only —
+     falls back to the regular grid above where unsupported. */
+  @supports (display: grid-lanes) {
+    .projects-grid {
+      display: grid-lanes;
+    }
+  }
+
   /* ── Project card ──────────────────────────────── */
   .project-card {
     background-color: var(--color-surface);
@@ -534,6 +543,112 @@
 
   .card--hidden {
     display: none;
+  }
+
+  /* ── Store links (collapsible) ─────────────────── */
+  .project-card-stores {
+    margin-block-start: var(--space-xs);
+  }
+
+  .project-card-stores summary {
+    cursor: pointer;
+    font-size: var(--text-sm);
+    font-weight: 600;
+    color: var(--color-accent);
+    list-style: none;
+  }
+
+  .project-card-stores summary::-webkit-details-marker {
+    display: none;
+  }
+
+  .project-card-stores summary::before {
+    content: '▸';
+    display: inline-block;
+    margin-inline-end: 0.4em;
+    transition: transform 0.2s ease;
+  }
+
+  .project-card-stores[open] summary::before {
+    transform: rotate(90deg);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .project-card-stores summary::before { transition: none; }
+  }
+
+  .store-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-xs);
+    margin-block-start: var(--space-xs);
+  }
+
+  .store-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    max-inline-size: 2.25rem;
+    block-size: 2.25rem;
+    padding-inline: 0.5625rem;
+    overflow: hidden;
+    white-space: nowrap;
+    background-color: var(--color-accent);
+    border: 1px solid var(--color-accent);
+    border-radius: var(--radius-full);
+    transition: max-inline-size 0.3s ease, padding-inline-end 0.3s ease,
+      background-color 0.2s ease, border-color 0.2s ease;
+  }
+
+  .store-btn svg {
+    flex-shrink: 0;
+  }
+
+  .store-btn-label {
+    flex-shrink: 0;
+    font-size: var(--text-sm);
+    font-weight: 600;
+    color: #ffffff;
+    opacity: 0;
+    transition: opacity 0.15s ease;
+  }
+
+  .store-btn:hover,
+  .store-btn:focus-visible {
+    max-inline-size: 14rem;
+    padding-inline-end: 0.9rem;
+    background-color: var(--color-accent-hover);
+    border-color: var(--color-accent-hover);
+  }
+
+  .store-btn:hover .store-btn-label,
+  .store-btn:focus-visible .store-btn-label {
+    opacity: 1;
+    transition-delay: 0.1s;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .store-btn { transition: background-color 0.2s ease, border-color 0.2s ease; }
+    .store-btn-label { transition: none; }
+  }
+
+  /* Touch input and mobile layouts get bigger, more separated targets —
+     fingers are far less precise than a mouse pointer. */
+  @media (pointer: coarse), (max-width: 40em) {
+    .store-links {
+      gap: var(--space-sm);
+    }
+
+    .store-btn {
+      max-inline-size: 2.75rem;
+      block-size: 2.75rem;
+      padding-inline: 0.75rem;
+    }
+
+    .store-btn svg {
+      width: 20px;
+      height: 20px;
+    }
   }
 
   /* ── Tag filters ───────────────────────────────── */

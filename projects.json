@@ -5,7 +5,12 @@
     "link": "https://diek.us/golden-hour/",
     "tags": ["photography", "app", "coded w/ AI", "web"],
     "thumbnail": "./images/projects/tn-goldenhour.png",
-    "featured": true
+    "featured": true,
+    "storeLinks": {
+      "googlePlay": "https://play.google.com/store/apps/details?id=us.diek.goldenhour",
+      "microsoftStore": "https://apps.microsoft.com/detail/9n09lp70fbkx",
+      "appStore": ""
+    }
   },
   {
     "title": "Chemins du Soleil",
@@ -13,7 +18,12 @@
     "link": "https://diek.us/chemins-du-soleil/",
     "tags": ["ski", "app", "coded w/ AI", "web"],
     "thumbnail": "./images/projects/tn-cheminsdusoleil.png",
-    "featured": true
+    "featured": true,
+    "storeLinks": {
+      "googlePlay": "https://play.google.com/store/apps/details?id=us.diek.cheminssoleil",
+      "microsoftStore": "https://apps.microsoft.com/detail/9ngl1nvx198x",
+      "appStore": ""
+    }
   },
   {
     "title": "kaid",
@@ -21,7 +31,12 @@
     "link": "#",
     "tags": ["AI", "cohort", "training"],
     "thumbnail": "./images/projects/tn-kaid.png",
-    "featured": false
+    "featured": false,
+    "storeLinks": {
+      "googlePlay": "",
+      "microsoftStore": "",
+      "appStore": ""
+    }
   },
   {
     "title": "bubble",
@@ -29,7 +44,12 @@
     "link": "https://diek.us/bubble",
     "tags": ["XR", "app", "web"],
     "thumbnail": "./images/projects/tn-bubble.png",
-    "featured": true
+    "featured": true,
+    "storeLinks": {
+      "googlePlay": "",
+      "microsoftStore": "https://apps.microsoft.com/detail/9mz354q31tmq",
+      "appStore": ""
+    }
   },
   {
     "title": "pwinter",
@@ -37,7 +57,12 @@
     "link": "https://diek.us/pwinter",
     "tags": ["app", "web"],
     "thumbnail": "./images/projects/tn-pwinter.png",
-    "featured": true
+    "featured": true,
+    "storeLinks": {
+      "googlePlay": "",
+      "microsoftStore": "https://apps.microsoft.com/detail/9n4pnq7rkx4w",
+      "appStore": ""
+    }
   },
   {
     "title": "Tidbyt Weather App",
@@ -45,6 +70,11 @@
     "link": "https://github.com/diekus/tbWeather/tree/main",
     "tags": ["tidbyt", "coded w/ AI"],
     "thumbnail": "./images/projects/tn-tidbytweather.png",
-    "featured": true
+    "featured": true,
+    "storeLinks": {
+      "googlePlay": "",
+      "microsoftStore": "",
+      "appStore": ""
+    }
   }
 ]
