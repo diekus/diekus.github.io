@@ -49,6 +49,8 @@
     --color-accent:       #F71342;   /* red — canvas dots, portrait ring       */
     --color-accent-hover: #c8002e;
     --color-accent-2:     #ffffff;   /* white — canvas lines                   */
+    --color-muted:        color-mix(in srgb, black 42%, transparent); /* shade of whatever's behind */
+    --color-muted-hover:  color-mix(in srgb, black 50%, transparent);
     --color-border:       #cc9500;   /* deep amber border                      */
 
     /* Spacing tokens */
@@ -89,6 +91,8 @@
       --color-accent:       #F71342;   /* red — decorative on dark             */
       --color-accent-hover: #ff4060;
       --color-accent-2:     #ffbb00;   /* amber — canvas lines, warm callback  */
+      --color-muted:        color-mix(in srgb, white 18%, transparent); /* tint of whatever's behind */
+      --color-muted-hover:  color-mix(in srgb, white 22%, transparent);
       --color-border:       #555555;
     }
   }
@@ -103,6 +107,8 @@
     --color-accent:       #F71342;
     --color-accent-hover: #c8002e;
     --color-accent-2:     #ffffff;
+    --color-muted:        color-mix(in srgb, black 42%, transparent);
+    --color-muted-hover:  color-mix(in srgb, black 50%, transparent);
     --color-border:       #cc9500;
   }
 
@@ -115,6 +121,8 @@
     --color-accent:       #F71342;
     --color-accent-hover: #ff4060;
     --color-accent-2:     #F79813;
+    --color-muted:        color-mix(in srgb, white 18%, transparent);
+    --color-muted-hover:  color-mix(in srgb, white 22%, transparent);
     --color-border:       #555555;
   }
 
@@ -593,8 +601,8 @@
     padding-inline: 0.5625rem;
     overflow: hidden;
     white-space: nowrap;
-    background-color: var(--color-accent);
-    border: 1px solid var(--color-accent);
+    background-color: var(--color-muted);
+    border: 1px solid var(--color-muted);
     border-radius: var(--radius-full);
     transition: max-inline-size 0.3s ease, padding-inline-end 0.3s ease,
       background-color 0.2s ease, border-color 0.2s ease;
@@ -617,8 +625,8 @@
   .store-btn:focus-visible {
     max-inline-size: 14rem;
     padding-inline-end: 0.9rem;
-    background-color: var(--color-accent-hover);
-    border-color: var(--color-accent-hover);
+    background-color: var(--color-muted-hover);
+    border-color: var(--color-muted-hover);
   }
 
   .store-btn:hover .store-btn-label,
