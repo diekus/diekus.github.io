@@ -6,6 +6,7 @@
     "tags": ["photography", "app", "coded w/ AI", "web"],
     "thumbnail": "./images/projects/tn-goldenhour.png",
     "featured": true,
+    "manifest": "https://diek.us/golden-hour/manifest.webmanifest",
     "storeLinks": {
       "googlePlay": "https://play.google.com/store/apps/details?id=us.diek.goldenhour",
       "microsoftStore": "https://apps.microsoft.com/detail/9n09lp70fbkx",
@@ -19,6 +20,7 @@
     "tags": ["ski", "app", "coded w/ AI", "web"],
     "thumbnail": "./images/projects/tn-cheminsdusoleil.png",
     "featured": true,
+    "manifest": "https://diek.us/chemins-du-soleil/manifest.json",
     "storeLinks": {
       "googlePlay": "https://play.google.com/store/apps/details?id=us.diek.cheminssoleil",
       "microsoftStore": "https://apps.microsoft.com/detail/9ngl1nvx198x",
@@ -45,6 +47,7 @@
     "tags": ["XR", "app", "web"],
     "thumbnail": "./images/projects/tn-bubble.png",
     "featured": true,
+    "manifest": "https://diek.us/bubble/manifest.json",
     "storeLinks": {
       "googlePlay": "",
       "microsoftStore": "https://apps.microsoft.com/detail/9mz354q31tmq",

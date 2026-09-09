@@ -51,7 +51,7 @@ export function renderCard(project) {
   body.appendChild(desc);
   body.appendChild(tagList);
 
-  const storeLinks = renderStoreLinks(project.storeLinks, project.link);
+  const storeLinks = renderStoreLinks(project.storeLinks, project.link, project.manifest);
   if (storeLinks) body.appendChild(storeLinks);
 
   article.appendChild(body);
@@ -74,7 +74,7 @@ const STORES = [
   { key: 'appStore', label: 'App Store', icon: ICONS.appStore },
 ];
 
-function createStoreBtn(href, label, icon) {
+function createStoreBtn(href, label, icon, installManifest) {
   const btn = document.createElement('a');
   btn.className = 'store-btn';
   btn.href = href;
@@ -82,10 +82,27 @@ function createStoreBtn(href, label, icon) {
   btn.rel = 'noopener noreferrer';
   btn.setAttribute('aria-label', label);
   btn.innerHTML = `${icon}<span class="store-btn-label" aria-hidden="true">${label}</span>`;
+
+  // Experimental Web Install API (navigator.install) — origin-trial gated as
+  // of writing, so this is a no-op for almost everyone today. Where it *is*
+  // exposed, install the app directly instead of just opening its link; any
+  // failure other than the user cancelling falls back to that same link.
+  if (installManifest && 'install' in navigator) {
+    btn.addEventListener('click', async event => {
+      event.preventDefault();
+      try {
+        await navigator.install({ manifest: installManifest });
+      } catch (err) {
+        if (err?.name === 'AbortError') return;
+        window.open(href, '_blank', 'noopener,noreferrer');
+      }
+    });
+  }
+
   return btn;
 }
 
-function renderStoreLinks(storeLinks, webLink) {
+function renderStoreLinks(storeLinks, webLink, manifestUrl) {
   if (!storeLinks) return null;
 
   const available = STORES.filter(store => storeLinks[store.key] && storeLinks[store.key] !== '#');
@@ -102,7 +119,7 @@ function renderStoreLinks(storeLinks, webLink) {
   list.className = 'store-links';
 
   if (webLink && webLink !== '#') {
-    list.appendChild(createStoreBtn(webLink, 'Web App', ICONS.web));
+    list.appendChild(createStoreBtn(webLink, 'Web App', ICONS.web, manifestUrl));
   }
 
   for (const store of available) {
