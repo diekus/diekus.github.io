@@ -74,7 +74,7 @@
     "link": "https://diek.us/pwinter",
     "tags": ["app", "web"],
     "thumbnail": "./images/projects/tn-pwinter.png",
-    "featured": true,
+    "featured": false,
     "storeLinks": {
       "googlePlay": "",
       "microsoftStore": "https://apps.microsoft.com/detail/9n4pnq7rkx4w",
@@ -87,7 +87,7 @@
     "link": "https://github.com/diekus/tbWeather/tree/main",
     "tags": ["tidbyt", "coded w/ AI"],
     "thumbnail": "./images/projects/tn-tidbytweather.png",
-    "featured": true,
+    "featured": false,
     "storeLinks": {
       "googlePlay": "",
       "microsoftStore": "",
