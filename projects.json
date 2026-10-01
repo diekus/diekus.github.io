@@ -1,5 +1,19 @@
 [
   {
+    "title": "Foldable Guide",
+    "description": "A simple boilerplate for web apps on foldable devices.",
+    "link": "https://diek.us/foldable-guide/",
+    "tags": ["web", "app", "demo", "foldable"],
+    "thumbnail": "./images/projects/tn-foldableguide.png",
+    "featured": true,
+    "manifest": "https://diek.us/foldable-guide/manifest.webmanifest",
+    "storeLinks": {
+      "googlePlay": "",
+      "microsoftStore": "",
+      "appStore": ""
+    }
+  },
+  {
     "title": "Golden Hour",
     "description": "A utility to calculate golden and blue hour for photography.",
     "link": "https://diek.us/golden-hour/",
