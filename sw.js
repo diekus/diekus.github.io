@@ -1,4 +1,4 @@
-const CACHE_VERSION = 'diekus-v9';
+const CACHE_VERSION = 'diekus-v21';
 
 const SHELL = [
   '/',
@@ -26,6 +26,10 @@ const SHELL = [
   '/icons/icon-192.png',
   '/icons/icon-512.png',
   '/images/diekus.jpg',
+  '/images/logo-dark.png',
+  '/images/logo-light.png',
+  '/images/icon-dark.png',
+  '/images/icon-light.png',
 ];
 
 // ── Install — cache the shell ──────────────────────────────────────────────

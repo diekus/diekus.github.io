@@ -97,7 +97,7 @@
 }
 
 .gallery-empty {
-  color: var(--color-text-muted);
+  color: var(--color-text-strong);
   font-size: var(--text-lg);
   text-align: center;
   padding-block: var(--space-2xl);

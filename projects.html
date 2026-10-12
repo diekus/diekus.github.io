@@ -14,7 +14,7 @@
   <title>Projects · diekus</title>
 </head>
 <body>
-  <!-- Particle canvas — fixed behind all content -->
+  <!-- Gradient-blob canvas — fixed behind all content -->
   <canvas id="bg-canvas" aria-hidden="true"></canvas>
 
   <!-- Window Controls Overlay title bar region -->
@@ -24,7 +24,16 @@
 
   <header class="site-header">
     <div class="header-inner">
-      <a href="/" class="site-name" aria-label="diekus — home">diek.us</a>
+      <a href="/" class="site-name" aria-label="diekus — home">
+        <span class="site-logo-full">
+          <img src="images/logo-dark.png" alt="" class="site-logo site-logo--dark" width="360" height="64">
+          <img src="images/logo-light.png" alt="" class="site-logo site-logo--light" width="360" height="64">
+        </span>
+        <span class="site-logo-compact">
+          <img src="images/icon-dark.png" alt="" class="site-logo site-logo--dark" width="90" height="82">
+          <img src="images/icon-light.png" alt="" class="site-logo site-logo--light" width="70" height="64">
+        </span>
+      </a>
 
       <nav class="page-nav" aria-label="Page sections">
         <a href="projects.html" class="nav-link" aria-current="page">Projects</a>

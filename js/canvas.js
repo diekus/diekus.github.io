@@ -1,18 +1,25 @@
-/** Particle / constellation background canvas. */
+/** Gradient-blob background canvas. */
 
 const canvas = /** @type {HTMLCanvasElement} */ (document.getElementById('bg-canvas'));
 const ctx = canvas.getContext('2d');
 
-const MAX_PARTICLES    = 80;
-const CONNECTION_DIST  = 130;   // px — max distance to draw a connecting line
-const BASE_SPEED       = 0.3;
-const BURST_COUNT      = 16;
+const SCALE         = 0.25;   // render at quarter resolution — gradients upscale smoothly
+const BLOB_COUNT    = 5;
+const PUSH_RADIUS   = 0.35;   // fraction of the larger viewport side
+const PUSH_STRENGTH = 0.12;
+const PULSE_LIFE    = 90;     // frames
+const FOLLOW_EASE   = 0.0072; // how quickly the pointer glow catches up (per frame)
+const SATURATION    = 0.8;    // blobs are 20% less saturated than the CSS tokens
 
-let particleColor = '#F71342';
-let lineColor     = '#ffffff';
-let particles     = [];
-let animFrame     = null;
-let paused        = false;
+let palette   = ['#0E5A85', '#1FB5A6', '#FF8A3D'];
+let blobs     = [];
+let pulses    = [];
+let animFrame = null;
+let paused    = false;
+let time      = 0;
+
+// Pointer state in CSS px; `strength` eases in/out as the pointer enters/leaves
+const pointer = { x: 0, y: 0, tx: 0, ty: 0, strength: 0, active: false };
 
 // ── Reduced-motion ─────────────────────────────────────────────────────────
 
@@ -23,136 +30,137 @@ let reduced = motionQuery.matches;
 
 function sampleColors() {
   const style = getComputedStyle(document.documentElement);
-  // Particles: --color-accent  (red in both modes)
-  // Lines:     --color-accent-2 (white in light, amber in dark)
-  particleColor = (style.getPropertyValue('--color-accent')  || '').trim() || '#F71342';
-  lineColor     = (style.getPropertyValue('--color-accent-2') || '').trim() || '#ffbb00';
+  const read = (name, fallback) => (style.getPropertyValue(name) || '').trim() || fallback;
+  palette = [
+    read('--color-accent',   '#0E5A85'),
+    read('--color-accent-2', '#1FB5A6'),
+    read('--color-accent-3', '#FF8A3D'),
+  ];
+  if (reduced) draw();
 }
 
-// ── Particle class ──────────────────────────────────────────────────────────
-
-class Particle {
-  /**
-   * @param {number|null} x  null → random across canvas
-   * @param {number|null} y
-   * @param {boolean}     burst  true → outward-drifting, fades out
-   */
-  constructor(x = null, y = null, burst = false) {
-    this.x    = x ?? Math.random() * canvas.width;
-    this.y    = y ?? Math.random() * canvas.height;
-    this.size = 1.5 + Math.random() * 2;
-    this.burst = burst;
-
-    const angle = Math.random() * Math.PI * 2;
-    const speed = burst
-      ? 1.2 + Math.random() * 2.5
-      : BASE_SPEED * (0.4 + Math.random() * 0.8);
-
-    this.vx = Math.cos(angle) * speed;
-    this.vy = Math.sin(angle) * speed;
-
-    if (burst) {
-      this.alpha   = 0.9;
-      this.life    = 80 + Math.random() * 60;
-      this.maxLife = this.life;
-    } else {
-      this.alpha = 0.3 + Math.random() * 0.5;
-      this.life  = Infinity;
-    }
-  }
-
-  update() {
-    this.x += this.vx;
-    this.y += this.vy;
-
-    if (this.burst) {
-      // Decelerate and fade
-      this.vx   *= 0.965;
-      this.vy   *= 0.965;
-      this.life -= 1;
-      this.alpha = (this.life / this.maxLife) * 0.9;
-    } else {
-      // Bounce off canvas edges
-      if (this.x < 0)             { this.x = 0;             this.vx *= -1; }
-      if (this.x > canvas.width)  { this.x = canvas.width;  this.vx *= -1; }
-      if (this.y < 0)             { this.y = 0;             this.vy *= -1; }
-      if (this.y > canvas.height) { this.y = canvas.height; this.vy *= -1; }
-    }
-  }
-
-  isDead() {
-    return this.burst && this.life <= 0;
-  }
+/**
+ * '#rrggbb' → 'r, g, b' (desaturated by SATURATION) so alpha can be applied
+ * in gradient stops. Scaling each channel's distance from the HSL lightness
+ * scales HSL saturation by the same factor while keeping hue and lightness.
+ */
+function rgb(hex) {
+  const n = parseInt(hex.replace('#', '').slice(0, 6), 16);
+  const c = [(n >> 16) & 255, (n >> 8) & 255, n & 255];
+  const l = (Math.max(...c) + Math.min(...c)) / 2;
+  return c.map(v => Math.round(l + (v - l) * SATURATION)).join(', ');
 }
 
-// ── Seed initial particles ─────────────────────────────────────────────────
+// ── Blobs ──────────────────────────────────────────────────────────────────
+
+class Blob {
+  constructor(i) {
+    this.colorIndex = i % 3;
+    // Home position as a fraction of the viewport, spread around the page
+    this.hx = 0.15 + Math.random() * 0.7;
+    this.hy = 0.15 + Math.random() * 0.7;
+    this.radius = 0.35 + Math.random() * 0.25;   // fraction of the larger side
+    this.alpha  = 0.45 + Math.random() * 0.25;
+    // Lissajous drift — each blob wanders on its own slow orbit
+    this.ax = 0.08 + Math.random() * 0.12;
+    this.ay = 0.08 + Math.random() * 0.12;
+    this.fx = 0.0015 + Math.random() * 0.002;
+    this.fy = 0.0015 + Math.random() * 0.002;
+    this.px = Math.random() * Math.PI * 2;
+    this.py = Math.random() * Math.PI * 2;
+    // Displacement from pointer, eased
+    this.ox = 0;
+    this.oy = 0;
+  }
+
+  position(w, h) {
+    return {
+      x: (this.hx + Math.sin(time * this.fx + this.px) * this.ax) * w + this.ox,
+      y: (this.hy + Math.cos(time * this.fy + this.py) * this.ay) * h + this.oy,
+    };
+  }
+
+  update(w, h) {
+    const side = Math.max(w, h);
+    const { x, y } = this.position(w, h);
+    let tx = 0, ty = 0;
+
+    // Drift away from the pointer, so the blobs part around the cursor
+    if (pointer.strength > 0) {
+      const dx = x - this.ox - pointer.x;
+      const dy = y - this.oy - pointer.y;
+      const dist = Math.hypot(dx, dy) || 1;
+      const reach = PUSH_RADIUS * side;
+      if (dist < reach) {
+        const force = (1 - dist / reach) * PUSH_STRENGTH * side * pointer.strength;
+        tx = (dx / dist) * force;
+        ty = (dy / dist) * force;
+      }
+    }
+
+    this.ox += (tx - this.ox) * 0.04;
+    this.oy += (ty - this.oy) * 0.04;
+  }
+}
 
 function seed() {
-  while (particles.length < MAX_PARTICLES) {
-    particles.push(new Particle());
-  }
+  blobs = Array.from({ length: BLOB_COUNT }, (_, i) => new Blob(i));
 }
 
 // ── Draw ───────────────────────────────────────────────────────────────────
 
-function draw() {
-  ctx.clearRect(0, 0, canvas.width, canvas.height);
-
-  // Connecting lines
-  for (let i = 0; i < particles.length; i++) {
-    for (let j = i + 1; j < particles.length; j++) {
-      const dx   = particles[i].x - particles[j].x;
-      const dy   = particles[i].y - particles[j].y;
-      const dist = Math.sqrt(dx * dx + dy * dy);
-      if (dist >= CONNECTION_DIST) continue;
-
-      const lineAlpha = (1 - dist / CONNECTION_DIST) * 0.35;
-      ctx.globalAlpha = lineAlpha;
-      ctx.strokeStyle = lineColor;
-      ctx.lineWidth   = 0.8;
-      ctx.beginPath();
-      ctx.moveTo(particles[i].x, particles[i].y);
-      ctx.lineTo(particles[j].x, particles[j].y);
-      ctx.stroke();
-    }
-  }
-
-  // Dots
-  ctx.fillStyle = particleColor;
-  for (const p of particles) {
-    ctx.globalAlpha = Math.max(0, p.alpha);
-    ctx.beginPath();
-    ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
-    ctx.fill();
-  }
-
-  ctx.globalAlpha = 1;
+function fillBlob(x, y, r, color, alpha) {
+  const c = rgb(color);
+  const g = ctx.createRadialGradient(x, y, 0, x, y, r);
+  g.addColorStop(0,   `rgba(${c}, ${alpha})`);
+  g.addColorStop(0.5, `rgba(${c}, ${alpha * 0.45})`);
+  g.addColorStop(1,   `rgba(${c}, 0)`);
+  ctx.fillStyle = g;
+  ctx.fillRect(x - r, y - r, r * 2, r * 2);
 }
 
-function drawStatic() {
-  ctx.clearRect(0, 0, canvas.width, canvas.height);
-  ctx.fillStyle = particleColor;
-  for (const p of particles) {
-    ctx.globalAlpha = p.alpha * 0.4;
-    ctx.beginPath();
-    ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
-    ctx.fill();
+function draw() {
+  const w = canvas.width / SCALE;
+  const h = canvas.height / SCALE;
+  const side = Math.max(w, h);
+
+  ctx.setTransform(SCALE, 0, 0, SCALE, 0, 0);
+  ctx.clearRect(0, 0, w, h);
+
+  for (const b of blobs) {
+    const { x, y } = b.position(w, h);
+    fillBlob(x, y, b.radius * side, palette[b.colorIndex], b.alpha);
   }
-  ctx.globalAlpha = 1;
+
+  // Soft glow that trails the pointer
+  if (pointer.strength > 0.01) {
+    fillBlob(pointer.x, pointer.y, 0.22 * side, palette[0], 0.5 * pointer.strength);
+  }
+
+  // Click pulses — expand and fade
+  for (const p of pulses) {
+    const t = 1 - p.life / PULSE_LIFE;
+    fillBlob(p.x, p.y, (0.05 + t * 0.3) * side, palette[p.colorIndex], 0.6 * (1 - t));
+  }
 }
 
 // ── Animation loop ─────────────────────────────────────────────────────────
 
 function animate() {
   if (paused || reduced) return;
-  particles = particles.filter(p => !p.isDead());
+  const w = canvas.width / SCALE;
+  const h = canvas.height / SCALE;
 
-  // Top up ambient particles lost to burst fade-out
-  while (particles.filter(p => !p.burst).length < MAX_PARTICLES) {
-    particles.push(new Particle());
-  }
+  time += 1;
 
-  for (const p of particles) p.update();
+  pointer.x += (pointer.tx - pointer.x) * FOLLOW_EASE;
+  pointer.y += (pointer.ty - pointer.y) * FOLLOW_EASE;
+  pointer.strength += ((pointer.active ? 1 : 0) - pointer.strength) * 0.05;
+
+  for (const b of blobs) b.update(w, h);
+  for (const p of pulses) p.life -= 1;
+  pulses = pulses.filter(p => p.life > 0);
+
   draw();
   animFrame = requestAnimationFrame(animate);
 }
@@ -169,9 +177,9 @@ function stopLoop() {
 // ── Resize ─────────────────────────────────────────────────────────────────
 
 function resize() {
-  canvas.width  = canvas.offsetWidth;
-  canvas.height = canvas.offsetHeight;
-  if (reduced) drawStatic();
+  canvas.width  = Math.max(1, Math.round(canvas.offsetWidth  * SCALE));
+  canvas.height = Math.max(1, Math.round(canvas.offsetHeight * SCALE));
+  if (reduced) draw();
 }
 
 const resizeObserver = new ResizeObserver(resize);
@@ -195,30 +203,43 @@ document.addEventListener('visibilitychange', () => {
   else                 { paused = false; if (!reduced) startLoop(); }
 });
 
-// ── Click burst — listen on window so any click fires it ──────────────────
+// ── Pointer — listen on window so the canvas can stay pointer-events: none ─
+
+function toCanvas(e) {
+  const rect = canvas.getBoundingClientRect();
+  return { x: e.clientX - rect.left, y: e.clientY - rect.top };
+}
+
+window.addEventListener('pointermove', e => {
+  const { x, y } = toCanvas(e);
+  if (!pointer.active && pointer.strength < 0.01) { pointer.x = x; pointer.y = y; }
+  pointer.tx = x;
+  pointer.ty = y;
+  pointer.active = true;
+}, { passive: true });
+
+document.documentElement.addEventListener('pointerleave', () => { pointer.active = false; });
+window.addEventListener('pointerup', e => { if (e.pointerType === 'touch') pointer.active = false; });
+window.addEventListener('blur', () => { pointer.active = false; });
 
 window.addEventListener('click', e => {
   if (reduced) return;
-  const rect = canvas.getBoundingClientRect();
-  const x = e.clientX - rect.left;
-  const y = e.clientY - rect.top;
-  for (let i = 0; i < BURST_COUNT; i++) {
-    particles.push(new Particle(x, y, true));
-  }
+  const { x, y } = toCanvas(e);
+  pulses.push({ x, y, life: PULSE_LIFE, colorIndex: pulses.length % 3 });
 });
 
 // ── Reduced-motion toggle ──────────────────────────────────────────────────
 
 motionQuery.addEventListener('change', e => {
   reduced = e.matches;
-  if (reduced) { stopLoop(); drawStatic(); }
+  if (reduced) { stopLoop(); pulses = []; pointer.strength = 0; draw(); }
   else startLoop();
 });
 
 // ── Bootstrap ─────────────────────────────────────────────────────────────
 
+seed();
 sampleColors();
 resize();
-seed();
 if (!reduced) startLoop();
-else drawStatic();
+else draw();

@@ -8,14 +8,14 @@
   "display_override": ["window-controls-overlay", "standalone"],
   "display": "standalone",
   "orientation": "any",
-  "background_color": "#3d3d3d",
+  "background_color": "#041B2A",
   "theme_color": [
     {
-      "color": "#ffbb00",
+      "color": "#FFC93C",
       "media": "(prefers-color-scheme: light)"
     },
     {
-      "color": "#3d3d3d",
+      "color": "#041B2A",
       "media": "(prefers-color-scheme: dark)"
     }
   ],

@@ -39,19 +39,22 @@
   :root {
     color-scheme: light dark;
 
-    /* ── Palette — amber bg / red accent / dark-gray + white text ─────────── */
-    /* Light: amber dominates; red as accent, white lines on canvas            */
-    --color-bg:           #ffbb00;   /* amber/yellow                           */
-    --color-surface:      #e6a800;   /* deeper amber — hover pills             */
-    --color-surface-2:    #cc9500;
-    --color-text:         #3d3d3d;   /* dark gray — 6.51:1 on amber ✓          */
-    --color-text-muted:   #3d2000;   /* dark amber — 9.19:1 on amber ✓         */
-    --color-accent:       #F71342;   /* red — canvas dots, portrait ring       */
-    --color-accent-hover: #c8002e;
-    --color-accent-2:     #ffffff;   /* white — canvas lines                   */
-    --color-muted:        color-mix(in srgb, black 42%, transparent); /* shade of whatever's behind */
-    --color-muted-hover:  color-mix(in srgb, black 50%, transparent);
-    --color-border:       #cc9500;   /* deep amber border                      */
+    /* ── Palette — "Deep water": gold / petrol blue / teal / orange ──────── */
+    /* Light: gold dominates; petrol-blue ink and links; blue/teal/orange blobs */
+    --color-bg:           #FFC93C;   /* gold                                   */
+    --color-surface:      #F2BA25;   /* deeper gold — hover pills              */
+    --color-surface-2:    #E0AA1A;
+    --color-text:         #1E4458;   /* petrol blue-grey — 6.76:1 on gold ✓    */
+    --color-text-muted:   #123B54;   /* 7.68:1 on gold ✓                       */
+    --color-text-strong:  #08314A;   /* petrol blue — 8.83:1 on gold ✓         */
+    --color-accent:       #0E5A85;   /* blue — bg blobs, link underlines (4.85:1) */
+    --color-accent-hover: #08314A;
+    --color-on-accent:    #ffffff;   /* text on accent fills                   */
+    --color-accent-2:     #1FB5A6;   /* teal — bg blobs                        */
+    --color-accent-3:     #FF8A3D;   /* orange — bg blobs                      */
+    --color-muted:        color-mix(in srgb, #08314A 72%, transparent); /* petrol shade of whatever's behind */
+    --color-muted-hover:  color-mix(in srgb, #08314A 80%, transparent);
+    --color-border:       #E0AA1A;   /* deep gold border                       */
 
     /* Spacing tokens */
     --space-xs:  clamp(0.25rem, 1vw, 0.5rem);
@@ -80,50 +83,59 @@
     --titlebar-width:  env(titlebar-area-width, 100%);
   }
 
-  /* Dark: charcoal bg; red accent, orange canvas lines                       */
+  /* Dark: deep petrol-blue bg; gold accent; gold/blue/teal background blobs */
   @media (prefers-color-scheme: dark) {
     :root {
-      --color-bg:           #3d3d3d;   /* dark gray (same value as light text) */
-      --color-surface:      #4a4a4a;
-      --color-surface-2:    #575757;
-      --color-text:         #ffffff;   /* white — 10.9:1 on charcoal ✓         */
-      --color-text-muted:   #c8c8c8;   /* light gray — 6.65:1 on charcoal ✓   */
-      --color-accent:       #F71342;   /* red — decorative on dark             */
-      --color-accent-hover: #ff4060;
-      --color-accent-2:     #ffbb00;   /* amber — canvas lines, warm callback  */
-      --color-muted:        color-mix(in srgb, white 18%, transparent); /* tint of whatever's behind */
-      --color-muted-hover:  color-mix(in srgb, white 22%, transparent);
-      --color-border:       #555555;
+      --color-bg:           #041B2A;   /* near-black petrol blue               */
+      --color-surface:      #0A2537;
+      --color-surface-2:    #102F44;
+      --color-text:         #D6E4EC;   /* pale blue-grey — 13.53:1 ✓           */
+      --color-text-muted:   #B4C9D6;   /* 10.26:1 on petrol ✓                  */
+      --color-text-strong:  #ffffff;
+      --color-accent:       #FFC93C;   /* gold — 11.44:1 on petrol ✓           */
+      --color-accent-hover: #FFD966;
+      --color-on-accent:    #041B2A;   /* dark text on gold fills              */
+      --color-accent-2:     #0E5A85;   /* petrol blue — bg blobs               */
+      --color-accent-3:     #1FB5A6;   /* teal — bg blobs                      */
+      --color-muted:        color-mix(in srgb, white 14%, transparent); /* tint of whatever's behind */
+      --color-muted-hover:  color-mix(in srgb, white 20%, transparent);
+      --color-border:       #163548;
     }
   }
 
   /* Manual overrides — beat the media query via [data-theme] specificity */
   [data-theme="light"] {
-    --color-bg:           #ffbb00;
-    --color-surface:      #e6a800;
-    --color-surface-2:    #cc9500;
-    --color-text:         #3d3d3d;
-    --color-text-muted:   #3d2000;
-    --color-accent:       #F71342;
-    --color-accent-hover: #c8002e;
-    --color-accent-2:     #ffffff;
-    --color-muted:        color-mix(in srgb, black 42%, transparent);
-    --color-muted-hover:  color-mix(in srgb, black 50%, transparent);
-    --color-border:       #cc9500;
+    --color-bg:           #FFC93C;
+    --color-surface:      #F2BA25;
+    --color-surface-2:    #E0AA1A;
+    --color-text:         #1E4458;
+    --color-text-muted:   #123B54;
+    --color-text-strong:  #08314A;
+    --color-accent:       #0E5A85;
+    --color-accent-hover: #08314A;
+    --color-on-accent:    #ffffff;
+    --color-accent-2:     #1FB5A6;
+    --color-accent-3:     #FF8A3D;
+    --color-muted:        color-mix(in srgb, #08314A 72%, transparent);
+    --color-muted-hover:  color-mix(in srgb, #08314A 80%, transparent);
+    --color-border:       #E0AA1A;
   }
 
   [data-theme="dark"] {
-    --color-bg:           #3d3d3d;
-    --color-surface:      #4a4a4a;
-    --color-surface-2:    #575757;
-    --color-text:         #ffffff;
-    --color-text-muted:   #c8c8c8;
-    --color-accent:       #F71342;
-    --color-accent-hover: #ff4060;
-    --color-accent-2:     #F79813;
-    --color-muted:        color-mix(in srgb, white 18%, transparent);
-    --color-muted-hover:  color-mix(in srgb, white 22%, transparent);
-    --color-border:       #555555;
+    --color-bg:           #041B2A;
+    --color-surface:      #0A2537;
+    --color-surface-2:    #102F44;
+    --color-text:         #D6E4EC;
+    --color-text-muted:   #B4C9D6;
+    --color-text-strong:  #ffffff;
+    --color-accent:       #FFC93C;
+    --color-accent-hover: #FFD966;
+    --color-on-accent:    #041B2A;
+    --color-accent-2:     #0E5A85;
+    --color-accent-3:     #1FB5A6;
+    --color-muted:        color-mix(in srgb, white 14%, transparent);
+    --color-muted-hover:  color-mix(in srgb, white 20%, transparent);
+    --color-border:       #163548;
   }
 
   /* Theme toggle icon visibility — CSS-only, no JS needed for first paint */
@@ -139,6 +151,19 @@
   [data-theme="light"] #icon-moon { display: block; }
   [data-theme="dark"]  #icon-sun  { display: block; }
   [data-theme="dark"]  #icon-moon { display: none; }
+
+  /* Header logo: dark artwork on the light theme, light artwork on the dark theme */
+  .site-logo--light { display: none; }
+
+  @media (prefers-color-scheme: dark) {
+    .site-logo--dark  { display: none; }
+    .site-logo--light { display: block; }
+  }
+
+  [data-theme="light"] .site-logo--dark  { display: block; }
+  [data-theme="light"] .site-logo--light { display: none; }
+  [data-theme="dark"]  .site-logo--dark  { display: none; }
+  [data-theme="dark"]  .site-logo--light { display: block; }
 }
 
 /* ============================================================
@@ -164,8 +189,7 @@
   }
 
   :focus-visible {
-    /* --color-text always passes 4.5:1 on both bg colours */
-    outline: 2px solid var(--color-text);
+    outline: 2px solid var(--color-text-strong);
     outline-offset: 3px;
     border-radius: var(--radius-sm);
   }
@@ -175,7 +199,7 @@
    Layout
    ============================================================ */
 @layer layout {
-  /* Particle canvas — fixed, behind everything */
+  /* Gradient-blob canvas — fixed, behind everything */
   #bg-canvas {
     position: fixed;
     inset: 0;
@@ -205,8 +229,7 @@
   .title-bar-name {
     font-size: var(--text-sm);
     font-weight: 600;
-    color: var(--color-text);
-    opacity: 0.7;
+    color: var(--color-text-strong);
     /* Prevent the text from being accidentally dragged */
     -webkit-app-region: no-drag;
     app-region: no-drag;
@@ -244,7 +267,7 @@
     text-align: center;
     padding-block: var(--space-xl);
     padding-inline: var(--space-lg);
-    color: var(--color-text-muted);
+    color: var(--color-text-strong);
     font-size: var(--text-sm);
     border-block-start: 1px solid var(--color-border);
   }
@@ -256,17 +279,32 @@
 @layer components {
   /* ── Site name ─────────────────────────────────────── */
   .site-name {
-    font-weight: 700;
-    font-size: var(--text-lg);
-    letter-spacing: -0.02em;
-    /* --color-text: 6.51:1 on amber (light) and 10.9:1 on charcoal (dark) ✓ */
-    color: var(--color-text);
+    display: flex;
+    align-items: center;
     margin-inline-end: auto;
-    transition: color 0.2s ease;
+    transition: opacity 0.2s ease;
   }
 
   .site-name:hover {
-    color: var(--color-text-muted);
+    opacity: 0.75;
+  }
+
+  .site-logo {
+    block-size: 2rem;
+    inline-size: auto;
+  }
+
+  /* Full wordmark when there's room; the bird icon on narrow headers */
+  .site-logo-full,
+  .site-logo-compact {
+    display: flex;
+  }
+
+  .site-logo-compact { display: none; }
+
+  @media (max-width: 42rem) {
+    .site-logo-full    { display: none; }
+    .site-logo-compact { display: flex; }
   }
 
   /* ── Social nav ────────────────────────────────────── */
@@ -284,14 +322,11 @@
     inline-size: 2rem;
     block-size: 2rem;
     border-radius: var(--radius-full);
-    color: var(--color-text-muted);
-    transition:
-      color 0.2s ease,
-      background-color 0.2s ease;
+    color: var(--color-text-strong);
+    transition: background-color 0.2s ease;
   }
 
   .social-link:hover {
-    color: var(--color-accent);
     background-color: var(--color-surface);
   }
 
@@ -303,14 +338,11 @@
     inline-size: 2rem;
     block-size: 2rem;
     border-radius: var(--radius-full);
-    color: var(--color-text-muted);
-    transition:
-      color 0.2s ease,
-      background-color 0.2s ease;
+    color: var(--color-text-strong);
+    transition: background-color 0.2s ease;
   }
 
   .theme-toggle:hover {
-    color: var(--color-accent);
     background-color: var(--color-surface);
   }
 
@@ -365,11 +397,12 @@
 
   .portrait {
     inline-size: clamp(7rem, 20vw, 10rem);
+    block-size: auto;
     aspect-ratio: 1;
-    border-radius: var(--radius-full);
+    border-radius: 50%;
     object-fit: cover;
-    border: 3px solid var(--color-accent);
-    box-shadow: 0 0 0 5px color-mix(in srgb, var(--color-accent) 20%, transparent);
+    border: 3px solid var(--color-text-strong);
+    box-shadow: 0 0 0 5px color-mix(in srgb, var(--color-text-strong) 30%, transparent);
   }
 
   /* ── Hero text ─────────────────────────────────────── */
@@ -387,13 +420,12 @@
     font-weight: 800;
     letter-spacing: -0.03em;
     line-height: 1.1;
-    color: var(--color-text);
+    color: var(--color-text-strong);
   }
 
   .hero-tagline {
     font-size: var(--text-lg);
-    /* --color-text-muted: 9.19:1 on amber (light) / 6.65:1 on charcoal (dark) ✓ */
-    color: var(--color-text-muted);
+    color: var(--color-text-strong);
     font-weight: 600;
     letter-spacing: 0.01em;
     margin-block-start: var(--space-sm);
@@ -401,7 +433,7 @@
 
   .hero-bio {
     font-size: var(--text-base);
-    color: var(--color-text-muted);
+    color: var(--color-text);
     line-height: 1.75;
     margin-block-start: var(--space-sm);
   }
@@ -421,16 +453,15 @@
   .nav-link {
     font-size: var(--text-sm);
     font-weight: 600;
-    color: var(--color-text-muted);
+    color: var(--color-text-strong);
     padding-block: 0.25em;
     padding-inline: 0.6em;
     border-radius: var(--radius-sm);
-    transition: color 0.2s ease, background-color 0.2s ease;
+    transition: background-color 0.2s ease;
   }
 
   .nav-link:hover,
   .nav-link[aria-current="page"] {
-    color: var(--color-text);
     background-color: var(--color-surface);
   }
 
@@ -455,7 +486,7 @@
     font-size: var(--text-xl);
     font-weight: 800;
     letter-spacing: -0.02em;
-    color: var(--color-text);
+    color: var(--color-text-strong);
   }
 
   /* ── Projects grid ─────────────────────────────── */
@@ -476,7 +507,7 @@
 
   /* ── Project card ──────────────────────────────── */
   .project-card {
-    background-color: var(--color-surface);
+    background-color: color-mix(in srgb, var(--color-surface) 70%, transparent);
     border: 1px solid var(--color-border);
     border-radius: var(--radius-md);
     overflow: hidden;
@@ -487,7 +518,7 @@
 
   .project-card:hover {
     transform: translateY(-2px);
-    box-shadow: 0 4px 16px color-mix(in srgb, var(--color-text) 10%, transparent);
+    box-shadow: 0 4px 16px color-mix(in srgb, var(--color-text) 12.5%, transparent);
   }
 
   @media (prefers-reduced-motion: reduce) {
@@ -515,7 +546,7 @@
   }
 
   .project-card-title a {
-    color: var(--color-text);
+    color: var(--color-text-strong);
     transition: color 0.2s ease;
   }
 
@@ -685,7 +716,7 @@
 
   .tag-filter--active {
     background-color: var(--color-accent);
-    color: #ffffff;
+    color: var(--color-on-accent);
     border-color: var(--color-accent);
   }
 
@@ -701,15 +732,15 @@
     gap: 0.25em;
     font-size: var(--text-sm);
     font-weight: 700;
-    color: var(--color-text);
+    color: var(--color-text-strong);
     border-block-end: 2px solid var(--color-accent);
     padding-block-end: 0.1em;
     align-self: flex-start;
-    transition: color 0.2s ease;
+    transition: border-color 0.2s ease;
   }
 
   .hero-gallery-link:hover {
-    color: var(--color-accent);
+    border-color: var(--color-text-strong);
   }
 
   /* ── Gallery teaser section ────────────────────── */
@@ -757,13 +788,13 @@
     align-self: flex-start;
     font-size: var(--text-sm);
     font-weight: 700;
-    color: var(--color-text);
+    color: var(--color-text-strong);
     border-block-end: 2px solid var(--color-accent);
     padding-block-end: 0.1em;
-    transition: color 0.2s ease;
+    transition: border-color 0.2s ease;
   }
 
   .see-all-link:hover {
-    color: var(--color-accent);
+    border-color: var(--color-text-strong);
   }
 }
