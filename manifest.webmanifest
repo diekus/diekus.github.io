@@ -11,7 +11,7 @@
   "background_color": "#041B2A",
   "theme_color": [
     {
-      "color": "#FFC93C",
+      "color": "#FFFCEB",
       "media": "(prefers-color-scheme: light)"
     },
     {

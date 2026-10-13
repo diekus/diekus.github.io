@@ -11,7 +11,7 @@ const PULSE_LIFE    = 90;     // frames
 const FOLLOW_EASE   = 0.0072; // how quickly the pointer glow catches up (per frame)
 const SATURATION    = 0.8;    // blobs are 20% less saturated than the CSS tokens
 
-let palette   = ['#0E5A85', '#1FB5A6', '#FF8A3D'];
+let palette   = ['#0E5A85', '#7DB9B0', '#FF8A3D'];
 let blobs     = [];
 let pulses    = [];
 let animFrame = null;
@@ -33,7 +33,7 @@ function sampleColors() {
   const read = (name, fallback) => (style.getPropertyValue(name) || '').trim() || fallback;
   palette = [
     read('--color-accent',   '#0E5A85'),
-    read('--color-accent-2', '#1FB5A6'),
+    read('--color-accent-2', '#7DB9B0'),
     read('--color-accent-3', '#FF8A3D'),
   ];
   if (reduced) draw();

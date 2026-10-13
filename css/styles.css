@@ -40,21 +40,21 @@
     color-scheme: light dark;
 
     /* ── Palette — "Deep water": gold / petrol blue / teal / orange ──────── */
-    /* Light: gold dominates; petrol-blue ink and links; blue/teal/orange blobs */
-    --color-bg:           #FFC93C;   /* gold                                   */
-    --color-surface:      #F2BA25;   /* deeper gold — hover pills              */
-    --color-surface-2:    #E0AA1A;
-    --color-text:         #1E4458;   /* petrol blue-grey — 6.76:1 on gold ✓    */
-    --color-text-muted:   #123B54;   /* 7.68:1 on gold ✓                       */
-    --color-text-strong:  #08314A;   /* petrol blue — 8.83:1 on gold ✓         */
-    --color-accent:       #0E5A85;   /* blue — bg blobs, link underlines (4.85:1) */
+    /* Light: pale banana dominates; petrol-blue ink and links; blue/teal/orange blobs */
+    --color-bg:           #FFFCEB;   /* very pale banana                       */
+    --color-surface:      #FDF4CC;   /* deeper banana — hover pills            */
+    --color-surface-2:    #F8EAB0;
+    --color-text:         #1E4458;   /* petrol blue-grey — 10.1:1 on banana ✓  */
+    --color-text-muted:   #123B54;   /* 11.5:1 on banana ✓                     */
+    --color-text-strong:  #08314A;   /* petrol blue — 13.2:1 on banana ✓       */
+    --color-accent:       #0E5A85;   /* blue — bg blobs, link underlines (7.2:1) */
     --color-accent-hover: #08314A;
     --color-on-accent:    #ffffff;   /* text on accent fills                   */
-    --color-accent-2:     #1FB5A6;   /* teal — bg blobs                        */
+    --color-accent-2:     #7DB9B0;   /* soft dusty teal — bg blobs             */
     --color-accent-3:     #FF8A3D;   /* orange — bg blobs                      */
     --color-muted:        color-mix(in srgb, #08314A 72%, transparent); /* petrol shade of whatever's behind */
     --color-muted-hover:  color-mix(in srgb, #08314A 80%, transparent);
-    --color-border:       #E0AA1A;   /* deep gold border                       */
+    --color-border:       #F8EAB0;   /* deep banana border                     */
 
     /* Spacing tokens */
     --space-xs:  clamp(0.25rem, 1vw, 0.5rem);
@@ -105,20 +105,20 @@
 
   /* Manual overrides — beat the media query via [data-theme] specificity */
   [data-theme="light"] {
-    --color-bg:           #FFC93C;
-    --color-surface:      #F2BA25;
-    --color-surface-2:    #E0AA1A;
+    --color-bg:           #FFFCEB;
+    --color-surface:      #FDF4CC;
+    --color-surface-2:    #F8EAB0;
     --color-text:         #1E4458;
     --color-text-muted:   #123B54;
     --color-text-strong:  #08314A;
     --color-accent:       #0E5A85;
     --color-accent-hover: #08314A;
     --color-on-accent:    #ffffff;
-    --color-accent-2:     #1FB5A6;
+    --color-accent-2:     #7DB9B0;
     --color-accent-3:     #FF8A3D;
     --color-muted:        color-mix(in srgb, #08314A 72%, transparent);
     --color-muted-hover:  color-mix(in srgb, #08314A 80%, transparent);
-    --color-border:       #E0AA1A;
+    --color-border:       #F8EAB0;
   }
 
   [data-theme="dark"] {

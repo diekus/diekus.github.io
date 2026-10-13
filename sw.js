@@ -1,4 +1,4 @@
-const CACHE_VERSION = 'diekus-v21';
+const CACHE_VERSION = 'diekus-v24';
 
 const SHELL = [
   '/',
