@@ -2,7 +2,7 @@
   {
     "relation": ["delegate_permission/common.handle_all_urls"],
     "target": {
-      "namespace": "chemins_app",
+      "namespace": "android_app",
       "package_name": "us.diek.cheminssoleil",
       "sha256_cert_fingerprints": [
         "C8:62:0D:E1:F6:C7:35:FC:C3:33:8C:C6:F6:35:AC:A6:82:94:4C:A1:F5:AC:B3:03:A9:E7:47:DB:DD:3F:35:3B",
@@ -13,7 +13,7 @@
   {
     "relation": ["delegate_permission/common.handle_all_urls"],
     "target": {
-      "namespace": "goldenhour_app",
+      "namespace": "android_app",
       "package_name": "us.diek.goldenhour",
       "sha256_cert_fingerprints": [
         "C1:61:63:6A:0A:51:ED:BF:1F:54:93:34:34:F4:AA:7E:79:A7:4A:B4:4E:F5:1E:56:1B:52:C1:BE:1A:D4:42:48",
