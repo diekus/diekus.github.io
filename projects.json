@@ -63,7 +63,7 @@
     "featured": true,
     "manifest": "https://diek.us/bubble/manifest.json",
     "storeLinks": {
-      "googlePlay": "",
+      "googlePlay": "https://play.google.com/store/apps/details?id=us.diek.bubble",
       "microsoftStore": "https://apps.microsoft.com/detail/9mz354q31tmq",
       "appStore": ""
     }
