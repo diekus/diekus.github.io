@@ -1,13 +1,9 @@
 [
   {
-    "relation": ["delegate_permission/common.handle_all_urls"],
-    "target": {
-      "namespace": "android_app",
-      "package_name": "us.diek.cheminssoleil",
-      "sha256_cert_fingerprints":
-        ["C3:BC:43:67:DB:42:3F:76:D9:3C:A2:75:E5:BB:C8:12:8E:EB:C0:12:E3:48:CF:11:36:80:E4:0A:89:B0:8B:F0"]
-    }
-  },
+  "relation": ["delegate_permission/common.handle_all_urls"],
+  "target" : { "namespace": "android_app", "package_name": "us.diek.cheminssoleil",
+               "sha256_cert_fingerprints": ["C3:BC:43:67:DB:42:3F:76:D9:3C:A2:75:E5:BB:C8:12:8E:EB:C0:12:E3:48:CF:11:36:80:E4:0A:89:B0:8B:F0"] }
+},
   {
     "relation": ["delegate_permission/common.handle_all_urls"],
     "target": {
