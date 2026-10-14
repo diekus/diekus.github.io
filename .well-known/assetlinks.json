@@ -5,20 +5,13 @@
                "sha256_cert_fingerprints": ["C3:BC:43:67:DB:42:3F:76:D9:3C:A2:75:E5:BB:C8:12:8E:EB:C0:12:E3:48:CF:11:36:80:E4:0A:89:B0:8B:F0"] }
 },
   {
-    "relation": ["delegate_permission/common.handle_all_urls"],
-    "target": {
-      "namespace": "android_app",
-      "package_name": "us.diek.goldenhour",
-      "sha256_cert_fingerprints":
-        ["C1:61:63:6A:0A:51:ED:BF:1F:54:93:34:34:F4:AA:7E:79:A7:4A:B4:4E:F5:1E:56:1B:52:C1:BE:1A:D4:42:48"]
-    }
-  },
+  "relation": ["delegate_permission/common.handle_all_urls"],
+  "target" : { "namespace": "android_app", "package_name": "us.diek.goldenhour",
+               "sha256_cert_fingerprints": ["C1:61:63:6A:0A:51:ED:BF:1F:54:93:34:34:F4:AA:7E:79:A7:4A:B4:4E:F5:1E:56:1B:52:C1:BE:1A:D4:42:48"] }
+},
   {
-      "relation": ["delegate_permission/common.handle_all_urls"],
-      "target": {
-        "namespace": "android_app",
-        "package_name": "us.diek.bubble",
-        "sha256_cert_fingerprints": ["7C:57:96:E8:A6:88:12:AD:B4:9E:EF:2F:3B:30:7E:D3:10:CE:25:A9:5F:AF:A2:5E:23:2D:E5:81:91:04:61:1E"]
-      }
-    }
+  "relation": ["delegate_permission/common.handle_all_urls"],
+  "target" : { "namespace": "android_app", "package_name": "us.diek.bubble",
+               "sha256_cert_fingerprints": ["C6:DA:5F:B0:76:4D:D3:93:43:E2:5E:47:4D:E0:13:1B:38:BC:3F:A6:53:0C:09:CC:A2:B7:49:73:49:DB:11:51"] }
+}
 ]
