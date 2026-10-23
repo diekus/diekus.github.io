@@ -42,19 +42,6 @@
     }
   },
   {
-    "title": "kaid",
-    "description": "An AI cohort — coming soon.",
-    "link": "#",
-    "tags": ["AI", "cohort", "training"],
-    "thumbnail": "./images/projects/tn-kaid.png",
-    "featured": false,
-    "storeLinks": {
-      "googlePlay": "",
-      "microsoftStore": "",
-      "appStore": ""
-    }
-  },
-  {
     "title": "bubble",
     "description": "Web based equirectangular image viewer.",
     "link": "https://diek.us/bubble",
